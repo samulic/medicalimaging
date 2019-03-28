@@ -1,0 +1,2338 @@
+diary on
+close all
+clear
+gm_o = load_nii('../data/lesions/homogeneous/PHANMAN_210416_95_103_m98_t31_OTseg__mod.nii')
+{Error using <a href="matlab:matlab.internal.language.introspective.errorDocCallback('load_nii_hdr', 'D:\Documents\MATLAB\NIfTI_20140122\load_nii_hdr.m', 32)" style="font-weight:bold">load_nii_hdr</a> (<a href="matlab: opentoline('D:\Documents\MATLAB\NIfTI_20140122\load_nii_hdr.m',32,0)">line 32</a>)
+Cannot find file
+"../data/lesions/homogeneous/PHANMAN_210416_95_103_m98_t31_OTseg__mod.nii".
+
+Error in <a href="matlab:matlab.internal.language.introspective.errorDocCallback('load_nii', 'D:\Documents\MATLAB\NIfTI_20140122\load_nii.m', 172)" style="font-weight:bold">load_nii</a> (<a href="matlab: opentoline('D:\Documents\MATLAB\NIfTI_20140122\load_nii.m',172,0)">line 172</a>)
+   [nii.hdr,nii.filetype,nii.fileprefix,nii.machine] = load_nii_hdr(filename);
+} 
+gm_o = load_nii('../data/lesions/homogeneous/PHANMAN_210416_95_103_m98_t31_OTseg__mod.nii')
+
+gm_o = 
+
+  <a href="matlab:helpPopup struct" style="font-weight:bold">struct</a> with fields:
+
+           hdr: [1×1 struct]
+      filetype: 2
+    fileprefix: '../data/lesions/homogeneous/PHANMAN_210416_95_103_m98_t31_OTseg__mod'
+       machine: 'ieee-le'
+           img: [20×18×9 double]
+      original: [1×1 struct]
+
+gm_e = load_nii('../data/lesions/homogeneous/PHANMAN_210416_71_79_m75_t39_OTseg__mod.nii')
+{Error using <a href="matlab:matlab.internal.language.introspective.errorDocCallback('load_nii_hdr', 'D:\Documents\MATLAB\NIfTI_20140122\load_nii_hdr.m', 32)" style="font-weight:bold">load_nii_hdr</a> (<a href="matlab: opentoline('D:\Documents\MATLAB\NIfTI_20140122\load_nii_hdr.m',32,0)">line 32</a>)
+Cannot find file
+"../data/lesions/homogeneous/PHANMAN_210416_71_79_m75_t39_OTseg__mod.nii".
+
+Error in <a href="matlab:matlab.internal.language.introspective.errorDocCallback('load_nii', 'D:\Documents\MATLAB\NIfTI_20140122\load_nii.m', 172)" style="font-weight:bold">load_nii</a> (<a href="matlab: opentoline('D:\Documents\MATLAB\NIfTI_20140122\load_nii.m',172,0)">line 172</a>)
+   [nii.hdr,nii.filetype,nii.fileprefix,nii.machine] = load_nii_hdr(filename);
+} 
+gm_e = load_nii('../data/lesions/heterogeneous/PHANMAN_210416_71_79_m75_t39_OTseg__mod.nii')
+{Error using <a href="matlab:matlab.internal.language.introspective.errorDocCallback('load_nii_hdr', 'D:\Documents\MATLAB\NIfTI_20140122\load_nii_hdr.m', 32)" style="font-weight:bold">load_nii_hdr</a> (<a href="matlab: opentoline('D:\Documents\MATLAB\NIfTI_20140122\load_nii_hdr.m',32,0)">line 32</a>)
+Cannot find file
+"../data/lesions/heterogeneous/PHANMAN_210416_71_79_m75_t39_OTseg__mod.nii".
+
+Error in <a href="matlab:matlab.internal.language.introspective.errorDocCallback('load_nii', 'D:\Documents\MATLAB\NIfTI_20140122\load_nii.m', 172)" style="font-weight:bold">load_nii</a> (<a href="matlab: opentoline('D:\Documents\MATLAB\NIfTI_20140122\load_nii.m',172,0)">line 172</a>)
+   [nii.hdr,nii.filetype,nii.fileprefix,nii.machine] = load_nii_hdr(filename);
+} 
+gm_e = load_nii('../data/lesions/heterogeneous/PHANMAN_210416_71_79_m75_t39_OTseg__mod.nii')
+
+gm_e = 
+
+  <a href="matlab:helpPopup struct" style="font-weight:bold">struct</a> with fields:
+
+           hdr: [1×1 struct]
+      filetype: 2
+    fileprefix: '../data/lesions/heterogeneous/PHANMAN_210416_71_79_m75_t39_OTseg__mod'
+       machine: 'ieee-le'
+           img: [10×18×9 double]
+      original: [1×1 struct]
+
+hdr = gm_o.hdr;
+hdr.hk
+
+ans = 
+
+  <a href="matlab:helpPopup struct" style="font-weight:bold">struct</a> with fields:
+
+       sizeof_hdr: 348
+        data_type: ''
+          db_name: ''
+          extents: 16384
+    session_error: 0
+          regular: 'r'
+         dim_info: 32
+
+hdr.dime
+
+ans = 
+
+  <a href="matlab:helpPopup struct" style="font-weight:bold">struct</a> with fields:
+
+               dim: [3 20 18 9 1 1 1 1]
+         intent_p1: 0
+         intent_p2: 0
+         intent_p3: 0
+       intent_code: 0
+          datatype: 64
+            bitpix: 64
+       slice_start: 0
+            pixdim: [1 2.7344 2.7344 3.2700 0 0 0 0]
+        vox_offset: 352
+         scl_slope: 0
+         scl_inter: 0
+         slice_end: 0
+        slice_code: 0
+        xyzt_units: 0
+           cal_max: 0
+           cal_min: 0
+    slice_duration: 0
+           toffset: 0
+             glmax: 5.4997e+04
+             glmin: 0
+
+hdr.hist
+
+ans = 
+
+  <a href="matlab:helpPopup struct" style="font-weight:bold">struct</a> with fields:
+
+        descrip: ''
+       aux_file: ''
+     qform_code: 0
+     sform_code: 0
+      quatern_b: 0
+      quatern_c: 0
+      quatern_d: 0
+      qoffset_x: 0
+      qoffset_y: 0
+      qoffset_z: 0
+         srow_x: [0 0 0 0]
+         srow_y: [0 0 0 0]
+         srow_z: [0 0 0 0]
+    intent_name: ''
+          magic: 'n+1'
+     originator: [0 0 0 0 0]
+     rot_orient: []
+    flip_orient: []
+
+hdr_e = gm_e.hdr;
+hdr_e.hk
+
+ans = 
+
+  <a href="matlab:helpPopup struct" style="font-weight:bold">struct</a> with fields:
+
+       sizeof_hdr: 348
+        data_type: ''
+          db_name: ''
+          extents: 16384
+    session_error: 0
+          regular: 'r'
+         dim_info: 32
+
+hdr_e.dime
+
+ans = 
+
+  <a href="matlab:helpPopup struct" style="font-weight:bold">struct</a> with fields:
+
+               dim: [3 10 18 9 1 1 1 1]
+         intent_p1: 0
+         intent_p2: 0
+         intent_p3: 0
+       intent_code: 0
+          datatype: 64
+            bitpix: 64
+       slice_start: 0
+            pixdim: [1 2.7344 2.7344 3.2700 0 0 0 0]
+        vox_offset: 352
+         scl_slope: 0
+         scl_inter: 0
+         slice_end: 0
+        slice_code: 0
+        xyzt_units: 0
+           cal_max: 0
+           cal_min: 0
+    slice_duration: 0
+           toffset: 0
+             glmax: 6.1494e+04
+             glmin: 0
+
+hdr_e.hist
+
+ans = 
+
+  <a href="matlab:helpPopup struct" style="font-weight:bold">struct</a> with fields:
+
+        descrip: ''
+       aux_file: ''
+     qform_code: 0
+     sform_code: 0
+      quatern_b: 0
+      quatern_c: 0
+      quatern_d: 0
+      qoffset_x: 0
+      qoffset_y: 0
+      qoffset_z: 0
+         srow_x: [0 0 0 0]
+         srow_y: [0 0 0 0]
+         srow_z: [0 0 0 0]
+    intent_name: ''
+          magic: 'n+1'
+     originator: [0 0 0 0 0]
+     rot_orient: []
+    flip_orient: []
+
+gm = gm_o.img;
+gm = double(gm);
+selectedslice = squeeze(gm(:,:,50));
+{Index in position 3 exceeds array bounds (must not exceed 9).
+} 
+selectedslice = squeeze(gm(:,:,9));
+minimum = min(min(selectedslice)); disp(num2str(minimum));
+0
+maximum = max(max(selectedslice)); disp(num2str(maximum));
+34518.0703
+
+% Normalize the image between 0 and 1
+selectedslice = selectedslice - minimum;
+disp(num2str(max(max(selectedslice))));
+34518.0703
+selectedslice = selectedslice/maximum;
+selectedslice = selectedslice*1;
+
+% Create a new figure
+figuragm = figure();
+
+% Plot the image on the current figure
+imshow(selectedslice,[]);
+
+% Visualize the colorbar
+colorbar
+selectedslice = squeeze(gm(:,:,3));
+
+% "Fix" the visualization based on the output/color scale
+minimum = min(min(selectedslice)); disp(num2str(minimum));
+0
+maximum = max(max(selectedslice)); disp(num2str(maximum));
+53925.3086
+
+% Normalize the image between 0 and 1
+selectedslice = selectedslice - minimum;
+disp(num2str(max(max(selectedslice))));
+53925.3086
+selectedslice = selectedslice/maximum;
+selectedslice = selectedslice*1;
+
+% Create a new figure
+figuragm = figure();
+
+% Plot the image on the current figure
+imshow(selectedslice,[]);
+
+% Visualize the colorbar
+colorbar
+gm_o = load_nii('../data/lesions/homogeneous/PHANMAN_130416_2_30_38_m35_t42_OTseg__mod.nii')
+{Error using <a href="matlab:matlab.internal.language.introspective.errorDocCallback('load_nii_hdr', 'D:\Documents\MATLAB\NIfTI_20140122\load_nii_hdr.m', 32)" style="font-weight:bold">load_nii_hdr</a> (<a href="matlab: opentoline('D:\Documents\MATLAB\NIfTI_20140122\load_nii_hdr.m',32,0)">line 32</a>)
+Cannot find file "../data/lesions/homogeneous/PHANMAN_130416_2_30_38_m35_t42_OTseg__mod.nii".
+
+Error in <a href="matlab:matlab.internal.language.introspective.errorDocCallback('load_nii', 'D:\Documents\MATLAB\NIfTI_20140122\load_nii.m', 172)" style="font-weight:bold">load_nii</a> (<a href="matlab: opentoline('D:\Documents\MATLAB\NIfTI_20140122\load_nii.m',172,0)">line 172</a>)
+   [nii.hdr,nii.filetype,nii.fileprefix,nii.machine] = load_nii_hdr(filename);
+} 
+gm_o = load_nii('../data/lesions/homogeneous/PHANMAN_130416_2_30_38_m35_t42_OTseg__mod.nii')
+
+gm_o = 
+
+  <a href="matlab:helpPopup struct" style="font-weight:bold">struct</a> with fields:
+
+           hdr: [1×1 struct]
+      filetype: 2
+    fileprefix: '../data/lesions/homogeneous/PHANMAN_130416_2_30_38_m35_t42_OTseg__mod'
+       machine: 'ieee-le'
+           img: [31×17×9 double]
+      original: [1×1 struct]
+
+hdr = gm_o.hdr;
+hdr.hk
+
+ans = 
+
+  <a href="matlab:helpPopup struct" style="font-weight:bold">struct</a> with fields:
+
+       sizeof_hdr: 348
+        data_type: ''
+          db_name: ''
+          extents: 16384
+    session_error: 0
+          regular: 'r'
+         dim_info: 32
+
+hdr.dime
+
+ans = 
+
+  <a href="matlab:helpPopup struct" style="font-weight:bold">struct</a> with fields:
+
+               dim: [3 31 17 9 1 1 1 1]
+         intent_p1: 0
+         intent_p2: 0
+         intent_p3: 0
+       intent_code: 0
+          datatype: 64
+            bitpix: 64
+       slice_start: 0
+            pixdim: [1 2.7344 2.7344 3.2700 0 0 0 0]
+        vox_offset: 352
+         scl_slope: 0
+         scl_inter: 0
+         slice_end: 0
+        slice_code: 0
+        xyzt_units: 0
+           cal_max: 0
+           cal_min: 0
+    slice_duration: 0
+           toffset: 0
+             glmax: 6.2496e+04
+             glmin: 0
+
+hdr.hist
+
+ans = 
+
+  <a href="matlab:helpPopup struct" style="font-weight:bold">struct</a> with fields:
+
+        descrip: ''
+       aux_file: ''
+     qform_code: 0
+     sform_code: 0
+      quatern_b: 0
+      quatern_c: 0
+      quatern_d: 0
+      qoffset_x: 0
+      qoffset_y: 0
+      qoffset_z: 0
+         srow_x: [0 0 0 0]
+         srow_y: [0 0 0 0]
+         srow_z: [0 0 0 0]
+    intent_name: ''
+          magic: 'n+1'
+     originator: [0 0 0 0 0]
+     rot_orient: []
+    flip_orient: []
+
+
+hdr_e = gm_e.hdr;
+hdr_e.hk
+
+ans = 
+
+  <a href="matlab:helpPopup struct" style="font-weight:bold">struct</a> with fields:
+
+       sizeof_hdr: 348
+        data_type: ''
+          db_name: ''
+          extents: 16384
+    session_error: 0
+          regular: 'r'
+         dim_info: 32
+
+hdr_e.dime
+
+ans = 
+
+  <a href="matlab:helpPopup struct" style="font-weight:bold">struct</a> with fields:
+
+               dim: [3 10 18 9 1 1 1 1]
+         intent_p1: 0
+         intent_p2: 0
+         intent_p3: 0
+       intent_code: 0
+          datatype: 64
+            bitpix: 64
+       slice_start: 0
+            pixdim: [1 2.7344 2.7344 3.2700 0 0 0 0]
+        vox_offset: 352
+         scl_slope: 0
+         scl_inter: 0
+         slice_end: 0
+        slice_code: 0
+        xyzt_units: 0
+           cal_max: 0
+           cal_min: 0
+    slice_duration: 0
+           toffset: 0
+             glmax: 6.1494e+04
+             glmin: 0
+
+hdr_e.hist
+
+ans = 
+
+  <a href="matlab:helpPopup struct" style="font-weight:bold">struct</a> with fields:
+
+        descrip: ''
+       aux_file: ''
+     qform_code: 0
+     sform_code: 0
+      quatern_b: 0
+      quatern_c: 0
+      quatern_d: 0
+      qoffset_x: 0
+      qoffset_y: 0
+      qoffset_z: 0
+         srow_x: [0 0 0 0]
+         srow_y: [0 0 0 0]
+         srow_z: [0 0 0 0]
+    intent_name: ''
+          magic: 'n+1'
+     originator: [0 0 0 0 0]
+     rot_orient: []
+    flip_orient: []
+
+
+% Read and visualize the image
+% Tip: use the function "squeeze"
+gm = gm_o.img;
+gm = double(gm);
+
+selectedslice = squeeze(gm(:,:,3));
+
+% "Fix" the visualization based on the output/color scale
+minimum = min(min(selectedslice)); disp(num2str(minimum));
+0
+maximum = max(max(selectedslice)); disp(num2str(maximum));
+58957.0078
+
+% Normalize the image between 0 and 1
+selectedslice = selectedslice - minimum;
+disp(num2str(max(max(selectedslice))));
+58957.0078
+selectedslice = selectedslice/maximum;
+selectedslice = selectedslice*1;
+
+% Create a new figure
+figuragm = figure();
+
+% Plot the image on the current figure
+imshow(selectedslice,[]);
+
+% Visualize the colorbar
+colorbar
+figuragm = figure();
+
+% Plot the image on the current figure
+imshow(selectedslice,[]);
+
+% Visualize the colorbar
+colorbar
+montage
+{Error using <a href="matlab:matlab.internal.language.introspective.errorDocCallback('montage>parse_inputs', 'C:\Program Files\MATLAB\R2018b\toolbox\images\imuitools\montage.m', 234)" style="font-weight:bold">montage>parse_inputs</a> (<a href="matlab: opentoline('C:\Program Files\MATLAB\R2018b\toolbox\images\imuitools\montage.m',234,0)">line 234</a>)
+Not enough input arguments.
+
+Error in <a href="matlab:matlab.internal.language.introspective.errorDocCallback('montage', 'C:\Program Files\MATLAB\R2018b\toolbox\images\imuitools\montage.m', 179)" style="font-weight:bold">montage</a> (<a href="matlab: opentoline('C:\Program Files\MATLAB\R2018b\toolbox\images\imuitools\montage.m',179,0)">line 179</a>)
+    parse_inputs(varargin{:});
+} 
+montage(gm)
+caxis('auto')
+colormap('jet')
+gm = gm_e.img;
+gm = double(gm);
+
+selectedslice = squeeze(gm(:,:,3));
+
+% "Fix" the visualization based on the output/color scale
+minimum = min(min(selectedslice)); disp(num2str(minimum));
+0
+maximum = max(max(selectedslice)); disp(num2str(maximum));
+57431.0469
+
+% Normalize the image between 0 and 1
+selectedslice = selectedslice - minimum;
+disp(num2str(max(max(selectedslice))));
+57431.0469
+selectedslice = selectedslice / maximum;
+selectedslice = selectedslice * 1;
+
+% Create a new figure
+figuragm = figure();
+
+% Plot the image on the current figure
+imshow(selectedslice,[]);
+
+% Visualize the colorbar
+colorbar
+figuragm = figure();
+montage(gm)
+
+caxis('auto')
+
+colormap('jet')
+figuragm = figure();
+
+montage(gm)
+caxis('auto')
+colormap('jet')
+hdr = gm_o.hdr;
+hdr.hk
+
+ans = 
+
+  <a href="matlab:helpPopup struct" style="font-weight:bold">struct</a> with fields:
+
+       sizeof_hdr: 348
+        data_type: ''
+          db_name: ''
+          extents: 16384
+    session_error: 0
+          regular: 'r'
+         dim_info: 32
+
+hdr.dime
+
+ans = 
+
+  <a href="matlab:helpPopup struct" style="font-weight:bold">struct</a> with fields:
+
+               dim: [3 31 17 9 1 1 1 1]
+         intent_p1: 0
+         intent_p2: 0
+         intent_p3: 0
+       intent_code: 0
+          datatype: 64
+            bitpix: 64
+       slice_start: 0
+            pixdim: [1 2.7344 2.7344 3.2700 0 0 0 0]
+        vox_offset: 352
+         scl_slope: 0
+         scl_inter: 0
+         slice_end: 0
+        slice_code: 0
+        xyzt_units: 0
+           cal_max: 0
+           cal_min: 0
+    slice_duration: 0
+           toffset: 0
+             glmax: 6.2496e+04
+             glmin: 0
+
+hdr.hist
+
+ans = 
+
+  <a href="matlab:helpPopup struct" style="font-weight:bold">struct</a> with fields:
+
+        descrip: ''
+       aux_file: ''
+     qform_code: 0
+     sform_code: 0
+      quatern_b: 0
+      quatern_c: 0
+      quatern_d: 0
+      qoffset_x: 0
+      qoffset_y: 0
+      qoffset_z: 0
+         srow_x: [0 0 0 0]
+         srow_y: [0 0 0 0]
+         srow_z: [0 0 0 0]
+    intent_name: ''
+          magic: 'n+1'
+     originator: [0 0 0 0 0]
+     rot_orient: []
+    flip_orient: []
+
+gm = gm_o.img;
+gm = double(gm);
+minimum = min(min(selectedslice)); disp(num2str(minimum));
+0
+maximum = max(max(selectedslice)); disp(num2str(maximum));
+1
+
+% Normalize the image between 0 and 1
+selectedslice = selectedslice - minimum;
+disp(num2str(max(max(selectedslice))));
+1
+selectedslice = selectedslice / maximum;
+selectedslice = selectedslice * 1;
+figuragm = figure();
+montage(gm)
+caxis('auto')
+colormap('jet')
+
+gm ~= 0
+
+  31×17×9 <a href="matlab:helpPopup logical" style="font-weight:bold">logical</a> array
+
+ans(:,:,1) =
+
+   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+   0   0   0   0   0   0   0   0   1   1   1   1   1   0   0   0   0
+   0   0   0   0   0   0   0   1   1   1   1   1   1   0   0   0   0
+   0   0   0   0   0   0   0   1   1   1   1   1   1   1   0   0   0
+   0   0   0   0   0   0   0   1   1   1   1   1   1   1   0   0   0
+   0   0   0   0   0   0   0   1   1   1   1   1   1   0   0   0   0
+   0   0   0   0   0   0   0   0   1   1   1   0   0   0   0   0   0
+   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+
+
+ans(:,:,2) =
+
+   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+   0   0   0   0   0   0   0   1   1   1   1   1   1   0   0   0   0
+   0   0   0   0   0   0   1   1   1   1   1   1   1   1   0   0   0
+   0   0   0   0   0   0   1   1   1   1   1   1   1   1   1   0   0
+   0   0   0   0   0   0   1   1   1   1   1   1   1   1   1   0   0
+   0   0   0   0   0   0   1   1   1   1   1   1   1   1   1   0   0
+   0   0   0   0   0   0   1   1   1   1   1   1   1   1   0   0   0
+   0   0   0   0   0   0   1   1   1   1   1   1   0   0   0   0   0
+   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+
+
+ans(:,:,3) =
+
+   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+   0   0   0   0   0   0   0   1   1   1   1   1   0   0   0   0   0
+   0   0   0   0   0   1   1   1   1   1   1   1   1   1   0   0   0
+   0   0   0   0   0   1   1   1   1   1   1   1   1   1   1   0   0
+   0   0   0   0   1   1   1   1   1   1   1   1   1   1   1   0   0
+   0   0   0   0   1   1   1   1   1   1   1   1   1   1   1   0   0
+   0   0   0   0   1   1   1   1   1   1   1   1   1   1   1   0   0
+   0   0   0   0   0   1   1   1   1   1   1   1   1   1   0   0   0
+   0   0   0   0   0   1   1   1   1   1   1   1   1   0   0   0   0
+   0   0   0   0   0   1   1   1   1   0   0   0   0   0   0   0   0
+   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+
+
+ans(:,:,4) =
+
+   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+   0   0   0   0   0   0   0   1   1   0   0   0   0   0   0   0   0
+   0   0   0   0   0   1   1   1   1   1   1   1   0   0   0   0   0
+   0   0   0   0   1   1   1   1   1   1   1   1   1   1   0   0   0
+   0   0   0   0   1   1   1   1   1   1   1   1   1   1   1   0   0
+   0   0   0   0   1   1   1   1   1   1   1   1   1   1   1   0   0
+   0   0   0   0   1   1   1   1   1   1   1   1   1   1   1   0   0
+   0   0   0   0   1   1   1   1   1   1   1   1   1   1   1   0   0
+   0   0   0   0   1   1   1   1   1   1   1   1   1   1   1   0   0
+   0   0   0   0   0   1   1   1   1   1   1   1   1   0   0   0   0
+   0   0   0   0   0   1   1   1   1   1   0   0   0   0   0   0   0
+   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+
+
+ans(:,:,5) =
+
+   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+   0   0   0   0   0   0   0   0   1   0   0   0   0   0   0   0   0
+   0   0   0   0   0   1   1   1   1   1   1   1   0   0   0   0   0
+   0   0   0   0   1   1   1   1   1   1   1   1   1   0   0   0   0
+   0   0   0   0   1   1   1   1   1   1   1   1   1   1   0   0   0
+   0   0   0   0   1   1   1   1   1   1   1   1   1   1   1   0   0
+   0   0   0   0   1   1   1   1   1   1   1   1   1   1   1   0   0
+   0   0   0   0   1   1   1   1   1   1   1   1   1   1   1   0   0
+   0   0   0   0   1   1   1   1   1   1   1   1   1   1   1   0   0
+   0   0   0   0   1   1   1   1   1   1   1   1   1   0   0   0   0
+   0   0   0   0   0   1   1   1   1   1   1   0   0   0   0   0   0
+   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+
+
+ans(:,:,6) =
+
+   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+   0   0   0   0   0   1   1   1   1   1   1   1   0   0   0   0   0
+   0   0   0   0   1   1   1   1   1   1   1   1   1   0   0   0   0
+   0   0   0   0   1   1   1   1   1   1   1   1   1   1   0   0   0
+   0   0   0   1   1   1   1   1   1   1   1   1   1   1   0   0   0
+   0   0   0   1   1   1   1   1   1   1   1   1   1   1   0   0   0
+   0   0   0   1   1   1   1   1   1   1   1   1   1   1   0   0   0
+   0   0   0   0   1   1   1   1   1   1   1   1   1   1   0   0   0
+   0   0   0   0   1   1   1   1   1   1   1   1   0   0   0   0   0
+   0   0   0   0   0   1   1   1   1   1   1   0   0   0   0   0   0
+   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+
+
+ans(:,:,7) =
+
+   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+   0   0   0   0   0   0   1   1   1   1   1   0   0   0   0   0   0
+   0   0   0   0   0   1   1   1   1   1   1   1   0   0   0   0   0
+   0   0   0   0   1   1   1   1   1   1   1   1   1   0   0   0   0
+   0   0   0   1   1   1   1   1   1   1   1   1   1   0   0   0   0
+   0   0   0   1   1   1   1   1   1   1   1   1   1   0   0   0   0
+   0   0   0   1   1   1   1   1   1   1   1   1   1   0   0   0   0
+   0   0   0   1   1   1   1   1   1   1   1   1   0   0   0   0   0
+   0   0   0   0   1   1   1   1   1   1   1   0   0   0   0   0   0
+   0   0   0   0   0   0   1   1   1   0   0   0   0   0   0   0   0
+   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+
+
+ans(:,:,8) =
+
+   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+   0   0   0   0   0   0   0   1   1   1   1   0   0   0   0   0   0
+   0   0   0   0   0   1   1   1   1   1   1   0   0   0   0   0   0
+   0   0   0   0   1   1   1   1   1   1   1   0   0   0   0   0   0
+   0   0   0   0   1   1   1   1   1   1   1   0   0   0   0   0   0
+   0   0   0   0   1   1   1   1   1   1   1   0   0   0   0   0   0
+   0   0   0   0   1   1   1   1   1   1   0   0   0   0   0   0   0
+   0   0   0   0   0   1   1   1   1   0   0   0   0   0   0   0   0
+   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+
+
+ans(:,:,9) =
+
+   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+   0   0   0   0   0   0   1   1   1   1   0   0   0   0   0   0   0
+   0   0   0   0   0   1   1   1   1   1   0   0   0   0   0   0   0
+   0   0   0   0   0   1   1   1   1   1   0   0   0   0   0   0   0
+   0   0   0   0   0   1   1   1   1   1   0   0   0   0   0   0   0
+   0   0   0   0   0   1   1   1   1   0   0   0   0   0   0   0   0
+   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+
+sum(gm ~= 0)
+
+ans(:,:,1) =
+
+     0     0     0     0     0     0     0     4     6     6     6     5     5     2     0     0     0
+
+
+ans(:,:,2) =
+
+     0     0     0     0     0     0     6     7     7     7     7     7     6     5     3     0     0
+
+
+ans(:,:,3) =
+
+     0     0     0     0     3     8     8     9     9     8     8     8     7     6     4     0     0
+
+
+ans(:,:,4) =
+
+     0     0     0     0     6     9     9    10    10     9     8     8     7     6     5     0     0
+
+
+ans(:,:,5) =
+
+     0     0     0     0     7     9     9     9    10     9     9     8     7     5     4     0     0
+
+
+ans(:,:,6) =
+
+     0     0     0     3     7     9     9     9     9     9     9     8     6     5     0     0     0
+
+
+ans(:,:,7) =
+
+     0     0     0     4     6     7     9     9     9     8     8     6     4     0     0     0     0
+
+
+ans(:,:,8) =
+
+     0     0     0     0     4     6     6     7     7     6     5     0     0     0     0     0     0
+
+
+ans(:,:,9) =
+
+     0     0     0     0     0     4     5     5     5     4     0     0     0     0     0     0     0
+
+help sum
+ <strong>sum</strong> Sum of elements.
+    S = <strong>sum</strong>(X) is the sum of the elements of the vector X. If X is a matrix,
+    S is a row vector with the sum over each column. For N-D arrays, 
+    <strong>sum</strong>(X) operates along the first non-singleton dimension.
+ 
+    S = <strong>sum</strong>(X,'all') sums all elements of X.
+ 
+    S = <strong>sum</strong>(X,DIM) sums along the dimension DIM.
+ 
+    S = <strong>sum</strong>(X,VECDIM) operates on the dimensions specified in the vector 
+    VECDIM. For example, <strong>sum</strong>(X,[1 2]) operates on the elements contained in
+    the first and second dimensions of X.
+ 
+    S = <strong>sum</strong>(...,TYPE) specifies the type in which the 
+    sum is performed, and the type of S. Available options are:
+ 
+    'double'    -  S has class double for any input X
+    'native'    -  S has the same class as X
+    'default'   -  If X is floating point, that is double or single,
+                   S has the same class as X. If X is not floating point, 
+                   S has class double.
+ 
+    S = <strong>sum</strong>(...,NANFLAG) specifies how NaN (Not-A-Number) values are 
+    treated. The default is 'includenan':
+ 
+    'includenan' - the sum of a vector containing NaN values is also NaN.
+    'omitnan'    - the sum of a vector containing NaN values
+                   is the sum of all its non-NaN elements. If all 
+                   elements are NaN, the result is 0.
+ 
+    Examples:
+        X = [0 1 2; 3 4 5]
+        sum(X, 1)
+        sum(X, 2)
+ 
+        X = int8(1:20)
+        sum(X)             % returns double(210), accumulates in double
+        sum(X,'native')    % returns int8(127), because it accumulates in
+                           % int8 but overflows and saturates.
+ 
+    See also <a href="matlab:help prod">prod</a>, <a href="matlab:help cumsum">cumsum</a>, <a href="matlab:help diff">diff</a>, <a href="matlab:help accumarray">accumarray</a>, <a href="matlab:help isfloat">isfloat</a>.
+
+    <a href="matlab:doc sum">Reference page for sum</a>
+    <a href="matlab:matlab.internal.language.introspective.overloads.displayOverloads('sum')">Other functions named sum</a>
+
+cumsum(gm ~= 0)
+
+ans(:,:,1) =
+
+     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0
+     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0
+     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0
+     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0
+     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0
+     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0
+     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0
+     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0
+     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0
+     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0
+     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0
+     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0
+     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0
+     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0
+     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0
+     0     0     0     0     0     0     0     0     1     1     1     1     1     0     0     0     0
+     0     0     0     0     0     0     0     1     2     2     2     2     2     0     0     0     0
+     0     0     0     0     0     0     0     2     3     3     3     3     3     1     0     0     0
+     0     0     0     0     0     0     0     3     4     4     4     4     4     2     0     0     0
+     0     0     0     0     0     0     0     4     5     5     5     5     5     2     0     0     0
+     0     0     0     0     0     0     0     4     6     6     6     5     5     2     0     0     0
+     0     0     0     0     0     0     0     4     6     6     6     5     5     2     0     0     0
+     0     0     0     0     0     0     0     4     6     6     6     5     5     2     0     0     0
+     0     0     0     0     0     0     0     4     6     6     6     5     5     2     0     0     0
+     0     0     0     0     0     0     0     4     6     6     6     5     5     2     0     0     0
+     0     0     0     0     0     0     0     4     6     6     6     5     5     2     0     0     0
+     0     0     0     0     0     0     0     4     6     6     6     5     5     2     0     0     0
+     0     0     0     0     0     0     0     4     6     6     6     5     5     2     0     0     0
+     0     0     0     0     0     0     0     4     6     6     6     5     5     2     0     0     0
+     0     0     0     0     0     0     0     4     6     6     6     5     5     2     0     0     0
+     0     0     0     0     0     0     0     4     6     6     6     5     5     2     0     0     0
+
+
+ans(:,:,2) =
+
+     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0
+     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0
+     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0
+     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0
+     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0
+     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0
+     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0
+     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0
+     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0
+     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0
+     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0
+     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0
+     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0
+     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0
+     0     0     0     0     0     0     0     1     1     1     1     1     1     0     0     0     0
+     0     0     0     0     0     0     1     2     2     2     2     2     2     1     0     0     0
+     0     0     0     0     0     0     2     3     3     3     3     3     3     2     1     0     0
+     0     0     0     0     0     0     3     4     4     4     4     4     4     3     2     0     0
+     0     0     0     0     0     0     4     5     5     5     5     5     5     4     3     0     0
+     0     0     0     0     0     0     5     6     6     6     6     6     6     5     3     0     0
+     0     0     0     0     0     0     6     7     7     7     7     7     6     5     3     0     0
+     0     0     0     0     0     0     6     7     7     7     7     7     6     5     3     0     0
+     0     0     0     0     0     0     6     7     7     7     7     7     6     5     3     0     0
+     0     0     0     0     0     0     6     7     7     7     7     7     6     5     3     0     0
+     0     0     0     0     0     0     6     7     7     7     7     7     6     5     3     0     0
+     0     0     0     0     0     0     6     7     7     7     7     7     6     5     3     0     0
+     0     0     0     0     0     0     6     7     7     7     7     7     6     5     3     0     0
+     0     0     0     0     0     0     6     7     7     7     7     7     6     5     3     0     0
+     0     0     0     0     0     0     6     7     7     7     7     7     6     5     3     0     0
+     0     0     0     0     0     0     6     7     7     7     7     7     6     5     3     0     0
+     0     0     0     0     0     0     6     7     7     7     7     7     6     5     3     0     0
+
+
+ans(:,:,3) =
+
+     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0
+     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0
+     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0
+     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0
+     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0
+     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0
+     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0
+     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0
+     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0
+     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0
+     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0
+     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0
+     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0
+     0     0     0     0     0     0     0     1     1     1     1     1     0     0     0     0     0
+     0     0     0     0     0     1     1     2     2     2     2     2     1     1     0     0     0
+     0     0     0     0     0     2     2     3     3     3     3     3     2     2     1     0     0
+     0     0     0     0     1     3     3     4     4     4     4     4     3     3     2     0     0
+     0     0     0     0     2     4     4     5     5     5     5     5     4     4     3     0     0
+     0     0     0     0     3     5     5     6     6     6     6     6     5     5     4     0     0
+     0     0     0     0     3     6     6     7     7     7     7     7     6     6     4     0     0
+     0     0     0     0     3     7     7     8     8     8     8     8     7     6     4     0     0
+     0     0     0     0     3     8     8     9     9     8     8     8     7     6     4     0     0
+     0     0     0     0     3     8     8     9     9     8     8     8     7     6     4     0     0
+     0     0     0     0     3     8     8     9     9     8     8     8     7     6     4     0     0
+     0     0     0     0     3     8     8     9     9     8     8     8     7     6     4     0     0
+     0     0     0     0     3     8     8     9     9     8     8     8     7     6     4     0     0
+     0     0     0     0     3     8     8     9     9     8     8     8     7     6     4     0     0
+     0     0     0     0     3     8     8     9     9     8     8     8     7     6     4     0     0
+     0     0     0     0     3     8     8     9     9     8     8     8     7     6     4     0     0
+     0     0     0     0     3     8     8     9     9     8     8     8     7     6     4     0     0
+     0     0     0     0     3     8     8     9     9     8     8     8     7     6     4     0     0
+
+
+ans(:,:,4) =
+
+     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0
+     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0
+     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0
+     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0
+     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0
+     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0
+     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0
+     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0
+     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0
+     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0
+     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0
+     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0
+     0     0     0     0     0     0     0     1     1     0     0     0     0     0     0     0     0
+     0     0     0     0     0     1     1     2     2     1     1     1     0     0     0     0     0
+     0     0     0     0     1     2     2     3     3     2     2     2     1     1     0     0     0
+     0     0     0     0     2     3     3     4     4     3     3     3     2     2     1     0     0
+     0     0     0     0     3     4     4     5     5     4     4     4     3     3     2     0     0
+     0     0     0     0     4     5     5     6     6     5     5     5     4     4     3     0     0
+     0     0     0     0     5     6     6     7     7     6     6     6     5     5     4     0     0
+     0     0     0     0     6     7     7     8     8     7     7     7     6     6     5     0     0
+     0     0     0     0     6     8     8     9     9     8     8     8     7     6     5     0     0
+     0     0     0     0     6     9     9    10    10     9     8     8     7     6     5     0     0
+     0     0     0     0     6     9     9    10    10     9     8     8     7     6     5     0     0
+     0     0     0     0     6     9     9    10    10     9     8     8     7     6     5     0     0
+     0     0     0     0     6     9     9    10    10     9     8     8     7     6     5     0     0
+     0     0     0     0     6     9     9    10    10     9     8     8     7     6     5     0     0
+     0     0     0     0     6     9     9    10    10     9     8     8     7     6     5     0     0
+     0     0     0     0     6     9     9    10    10     9     8     8     7     6     5     0     0
+     0     0     0     0     6     9     9    10    10     9     8     8     7     6     5     0     0
+     0     0     0     0     6     9     9    10    10     9     8     8     7     6     5     0     0
+     0     0     0     0     6     9     9    10    10     9     8     8     7     6     5     0     0
+
+
+ans(:,:,5) =
+
+     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0
+     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0
+     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0
+     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0
+     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0
+     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0
+     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0
+     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0
+     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0
+     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0
+     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0
+     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0
+     0     0     0     0     0     0     0     0     1     0     0     0     0     0     0     0     0
+     0     0     0     0     0     1     1     1     2     1     1     1     0     0     0     0     0
+     0     0     0     0     1     2     2     2     3     2     2     2     1     0     0     0     0
+     0     0     0     0     2     3     3     3     4     3     3     3     2     1     0     0     0
+     0     0     0     0     3     4     4     4     5     4     4     4     3     2     1     0     0
+     0     0     0     0     4     5     5     5     6     5     5     5     4     3     2     0     0
+     0     0     0     0     5     6     6     6     7     6     6     6     5     4     3     0     0
+     0     0     0     0     6     7     7     7     8     7     7     7     6     5     4     0     0
+     0     0     0     0     7     8     8     8     9     8     8     8     7     5     4     0     0
+     0     0     0     0     7     9     9     9    10     9     9     8     7     5     4     0     0
+     0     0     0     0     7     9     9     9    10     9     9     8     7     5     4     0     0
+     0     0     0     0     7     9     9     9    10     9     9     8     7     5     4     0     0
+     0     0     0     0     7     9     9     9    10     9     9     8     7     5     4     0     0
+     0     0     0     0     7     9     9     9    10     9     9     8     7     5     4     0     0
+     0     0     0     0     7     9     9     9    10     9     9     8     7     5     4     0     0
+     0     0     0     0     7     9     9     9    10     9     9     8     7     5     4     0     0
+     0     0     0     0     7     9     9     9    10     9     9     8     7     5     4     0     0
+     0     0     0     0     7     9     9     9    10     9     9     8     7     5     4     0     0
+     0     0     0     0     7     9     9     9    10     9     9     8     7     5     4     0     0
+
+
+ans(:,:,6) =
+
+     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0
+     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0
+     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0
+     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0
+     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0
+     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0
+     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0
+     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0
+     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0
+     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0
+     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0
+     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0
+     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0
+     0     0     0     0     0     1     1     1     1     1     1     1     0     0     0     0     0
+     0     0     0     0     1     2     2     2     2     2     2     2     1     0     0     0     0
+     0     0     0     0     2     3     3     3     3     3     3     3     2     1     0     0     0
+     0     0     0     1     3     4     4     4     4     4     4     4     3     2     0     0     0
+     0     0     0     2     4     5     5     5     5     5     5     5     4     3     0     0     0
+     0     0     0     3     5     6     6     6     6     6     6     6     5     4     0     0     0
+     0     0     0     3     6     7     7     7     7     7     7     7     6     5     0     0     0
+     0     0     0     3     7     8     8     8     8     8     8     8     6     5     0     0     0
+     0     0     0     3     7     9     9     9     9     9     9     8     6     5     0     0     0
+     0     0     0     3     7     9     9     9     9     9     9     8     6     5     0     0     0
+     0     0     0     3     7     9     9     9     9     9     9     8     6     5     0     0     0
+     0     0     0     3     7     9     9     9     9     9     9     8     6     5     0     0     0
+     0     0     0     3     7     9     9     9     9     9     9     8     6     5     0     0     0
+     0     0     0     3     7     9     9     9     9     9     9     8     6     5     0     0     0
+     0     0     0     3     7     9     9     9     9     9     9     8     6     5     0     0     0
+     0     0     0     3     7     9     9     9     9     9     9     8     6     5     0     0     0
+     0     0     0     3     7     9     9     9     9     9     9     8     6     5     0     0     0
+     0     0     0     3     7     9     9     9     9     9     9     8     6     5     0     0     0
+
+
+ans(:,:,7) =
+
+     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0
+     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0
+     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0
+     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0
+     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0
+     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0
+     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0
+     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0
+     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0
+     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0
+     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0
+     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0
+     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0
+     0     0     0     0     0     0     1     1     1     1     1     0     0     0     0     0     0
+     0     0     0     0     0     1     2     2     2     2     2     1     0     0     0     0     0
+     0     0     0     0     1     2     3     3     3     3     3     2     1     0     0     0     0
+     0     0     0     1     2     3     4     4     4     4     4     3     2     0     0     0     0
+     0     0     0     2     3     4     5     5     5     5     5     4     3     0     0     0     0
+     0     0     0     3     4     5     6     6     6     6     6     5     4     0     0     0     0
+     0     0     0     4     5     6     7     7     7     7     7     6     4     0     0     0     0
+     0     0     0     4     6     7     8     8     8     8     8     6     4     0     0     0     0
+     0     0     0     4     6     7     9     9     9     8     8     6     4     0     0     0     0
+     0     0     0     4     6     7     9     9     9     8     8     6     4     0     0     0     0
+     0     0     0     4     6     7     9     9     9     8     8     6     4     0     0     0     0
+     0     0     0     4     6     7     9     9     9     8     8     6     4     0     0     0     0
+     0     0     0     4     6     7     9     9     9     8     8     6     4     0     0     0     0
+     0     0     0     4     6     7     9     9     9     8     8     6     4     0     0     0     0
+     0     0     0     4     6     7     9     9     9     8     8     6     4     0     0     0     0
+     0     0     0     4     6     7     9     9     9     8     8     6     4     0     0     0     0
+     0     0     0     4     6     7     9     9     9     8     8     6     4     0     0     0     0
+     0     0     0     4     6     7     9     9     9     8     8     6     4     0     0     0     0
+
+
+ans(:,:,8) =
+
+     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0
+     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0
+     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0
+     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0
+     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0
+     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0
+     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0
+     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0
+     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0
+     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0
+     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0
+     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0
+     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0
+     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0
+     0     0     0     0     0     0     0     1     1     1     1     0     0     0     0     0     0
+     0     0     0     0     0     1     1     2     2     2     2     0     0     0     0     0     0
+     0     0     0     0     1     2     2     3     3     3     3     0     0     0     0     0     0
+     0     0     0     0     2     3     3     4     4     4     4     0     0     0     0     0     0
+     0     0     0     0     3     4     4     5     5     5     5     0     0     0     0     0     0
+     0     0     0     0     4     5     5     6     6     6     5     0     0     0     0     0     0
+     0     0     0     0     4     6     6     7     7     6     5     0     0     0     0     0     0
+     0     0     0     0     4     6     6     7     7     6     5     0     0     0     0     0     0
+     0     0     0     0     4     6     6     7     7     6     5     0     0     0     0     0     0
+     0     0     0     0     4     6     6     7     7     6     5     0     0     0     0     0     0
+     0     0     0     0     4     6     6     7     7     6     5     0     0     0     0     0     0
+     0     0     0     0     4     6     6     7     7     6     5     0     0     0     0     0     0
+     0     0     0     0     4     6     6     7     7     6     5     0     0     0     0     0     0
+     0     0     0     0     4     6     6     7     7     6     5     0     0     0     0     0     0
+     0     0     0     0     4     6     6     7     7     6     5     0     0     0     0     0     0
+     0     0     0     0     4     6     6     7     7     6     5     0     0     0     0     0     0
+     0     0     0     0     4     6     6     7     7     6     5     0     0     0     0     0     0
+
+
+ans(:,:,9) =
+
+     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0
+     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0
+     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0
+     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0
+     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0
+     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0
+     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0
+     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0
+     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0
+     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0
+     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0
+     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0
+     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0
+     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0
+     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0     0
+     0     0     0     0     0     0     1     1     1     1     0     0     0     0     0     0     0
+     0     0     0     0     0     1     2     2     2     2     0     0     0     0     0     0     0
+     0     0     0     0     0     2     3     3     3     3     0     0     0     0     0     0     0
+     0     0     0     0     0     3     4     4     4     4     0     0     0     0     0     0     0
+     0     0     0     0     0     4     5     5     5     4     0     0     0     0     0     0     0
+     0     0     0     0     0     4     5     5     5     4     0     0     0     0     0     0     0
+     0     0     0     0     0     4     5     5     5     4     0     0     0     0     0     0     0
+     0     0     0     0     0     4     5     5     5     4     0     0     0     0     0     0     0
+     0     0     0     0     0     4     5     5     5     4     0     0     0     0     0     0     0
+     0     0     0     0     0     4     5     5     5     4     0     0     0     0     0     0     0
+     0     0     0     0     0     4     5     5     5     4     0     0     0     0     0     0     0
+     0     0     0     0     0     4     5     5     5     4     0     0     0     0     0     0     0
+     0     0     0     0     0     4     5     5     5     4     0     0     0     0     0     0     0
+     0     0     0     0     0     4     5     5     5     4     0     0     0     0     0     0     0
+     0     0     0     0     0     4     5     5     5     4     0     0     0     0     0     0     0
+     0     0     0     0     0     4     5     5     5     4     0     0     0     0     0     0     0
+
+count(gm ~= 0)
+{Error using <a href="matlab:matlab.internal.language.introspective.errorDocCallback('count')" style="font-weight:bold">count</a>
+Not enough input arguments.
+} 
+`help sum
+ `help sum
+ 
+{Error: Invalid text character. Check for unsupported symbol, invisible character, or pasting of non-ASCII characters.
+} 
+help sum
+ <strong>sum</strong> Sum of elements.
+    S = <strong>sum</strong>(X) is the sum of the elements of the vector X. If X is a matrix,
+    S is a row vector with the sum over each column. For N-D arrays, 
+    <strong>sum</strong>(X) operates along the first non-singleton dimension.
+ 
+    S = <strong>sum</strong>(X,'all') sums all elements of X.
+ 
+    S = <strong>sum</strong>(X,DIM) sums along the dimension DIM.
+ 
+    S = <strong>sum</strong>(X,VECDIM) operates on the dimensions specified in the vector 
+    VECDIM. For example, <strong>sum</strong>(X,[1 2]) operates on the elements contained in
+    the first and second dimensions of X.
+ 
+    S = <strong>sum</strong>(...,TYPE) specifies the type in which the 
+    sum is performed, and the type of S. Available options are:
+ 
+    'double'    -  S has class double for any input X
+    'native'    -  S has the same class as X
+    'default'   -  If X is floating point, that is double or single,
+                   S has the same class as X. If X is not floating point, 
+                   S has class double.
+ 
+    S = <strong>sum</strong>(...,NANFLAG) specifies how NaN (Not-A-Number) values are 
+    treated. The default is 'includenan':
+ 
+    'includenan' - the sum of a vector containing NaN values is also NaN.
+    'omitnan'    - the sum of a vector containing NaN values
+                   is the sum of all its non-NaN elements. If all 
+                   elements are NaN, the result is 0.
+ 
+    Examples:
+        X = [0 1 2; 3 4 5]
+        sum(X, 1)
+        sum(X, 2)
+ 
+        X = int8(1:20)
+        sum(X)             % returns double(210), accumulates in double
+        sum(X,'native')    % returns int8(127), because it accumulates in
+                           % int8 but overflows and saturates.
+ 
+    See also <a href="matlab:help prod">prod</a>, <a href="matlab:help cumsum">cumsum</a>, <a href="matlab:help diff">diff</a>, <a href="matlab:help accumarray">accumarray</a>, <a href="matlab:help isfloat">isfloat</a>.
+
+    <a href="matlab:doc sum">Reference page for sum</a>
+    <a href="matlab:matlab.internal.language.introspective.overloads.displayOverloads('sum')">Other functions named sum</a>
+
+sum(gm ~= 0)
+
+ans(:,:,1) =
+
+     0     0     0     0     0     0     0     4     6     6     6     5     5     2     0     0     0
+
+
+ans(:,:,2) =
+
+     0     0     0     0     0     0     6     7     7     7     7     7     6     5     3     0     0
+
+
+ans(:,:,3) =
+
+     0     0     0     0     3     8     8     9     9     8     8     8     7     6     4     0     0
+
+
+ans(:,:,4) =
+
+     0     0     0     0     6     9     9    10    10     9     8     8     7     6     5     0     0
+
+
+ans(:,:,5) =
+
+     0     0     0     0     7     9     9     9    10     9     9     8     7     5     4     0     0
+
+
+ans(:,:,6) =
+
+     0     0     0     3     7     9     9     9     9     9     9     8     6     5     0     0     0
+
+
+ans(:,:,7) =
+
+     0     0     0     4     6     7     9     9     9     8     8     6     4     0     0     0     0
+
+
+ans(:,:,8) =
+
+     0     0     0     0     4     6     6     7     7     6     5     0     0     0     0     0     0
+
+
+ans(:,:,9) =
+
+     0     0     0     0     0     4     5     5     5     4     0     0     0     0     0     0     0
+
+sum(gm ~= 0, 'all')
+
+ans =
+
+   557
+
+sum(gm ~= 0, 'all')
+
+ans =
+
+   557
+
+31 * 17 * 9
+
+ans =
+
+        4743
+
+31 * 17 
+
+ans =
+
+   527
+
+sum(gm(:, :, 1) ~= 0, 'all')
+
+ans =
+
+    34
+
+sum(gm(:, :, 9) ~= 0, 'all')
+
+ans =
+
+    23
+
+sum(gm(:, :, 4) ~= 0, 'all')
+
+ans =
+
+    87
+
+hdr_e.dime.pixdim(2)
+
+ans =
+
+    2.7344
+
+x = hdr_e.dime.pixdim(2) / 10;
+y = hdr_e.dime.pixdim(3) / 10;
+z = hdr_e.dime.pixdim(4) / 10;
+vol = x * y * z * npix
+{Undefined function or variable 'npix'.
+} 
+npix = sum(gm ~= 0, 'all')
+
+npix =
+
+   557
+
+vol = x * y * z * npix
+
+vol =
+
+   13.6182
+
+x * y * z * 31 * 17 * 9
+
+ans =
+
+  115.9624
+
+min(min(gm))
+
+ans(:,:,1) =
+
+     0
+
+
+ans(:,:,2) =
+
+     0
+
+
+ans(:,:,3) =
+
+     0
+
+
+ans(:,:,4) =
+
+     0
+
+
+ans(:,:,5) =
+
+     0
+
+
+ans(:,:,6) =
+
+     0
+
+
+ans(:,:,7) =
+
+     0
+
+
+ans(:,:,8) =
+
+     0
+
+
+ans(:,:,9) =
+
+     0
+
+min(min(min(gm)))
+
+ans =
+
+     0
+
+path_o = '../data/lesions/homogeneous/';
+path_e = '../data/lesions/heterogeneous/';
+files = dir(fullfile([path_o '*.nii']));
+features = [];
+for n = 1:size(files,1)
+    pathtemp = [path files(n).name];
+    nii = load_nii(pathtemp);
+    img = double(nii.img);
+    % Header
+    hdr = img.hdr;
+
+    % "Fix" the visualization based on the output/color scale
+    minimum = min(min(min(img)));% disp(num2str(minimum));
+    maximum = max(max(max(img)));% disp(num2str(maximum));
+    
+    % Normalize the image between 0 and 1
+    img = img - minimum;
+    img = img / maximum;
+    img = img * 1;
+    
+    % Calculate Metabolic Target Volume (in cc)
+    features[n, 1] = calc_vol(img) 
+     features[n, 1] = calc_vol(img) 
+             
+{Error: Invalid expression. When calling a function or indexing a variable, use parentheses. Otherwise, check for mismatched
+delimiters.
+} 
+features = []
+
+features =
+
+     []
+
+features(1, 1) = 'foo
+ features(1, 1) = 'foo
+                  
+{Error: Character vector is not terminated properly.
+} 
+features(1, 1) = 'foo'
+{Unable to perform assignment because the indices on the left side are not compatible with the size of the right side.
+} 
+features = [size(files,1), 5]
+
+features =
+
+    26     5
+
+features(1, 1) = 'foo'
+{Unable to perform assignment because the size of the left side is 1-by-1 and the size of the right side is 1-by-3.
+} 
+features[1, 1] = 'foo'
+ features[1, 1] = 'foo'
+         
+{Error: Invalid expression. When calling a function or indexing a variable, use parentheses. Otherwise, check for mismatched
+delimiters.
+} 
+features[1, ] = 'fodso'
+ features[1, ] = 'fodso'
+         
+{Error: Invalid expression. When calling a function or indexing a variable, use parentheses. Otherwise, check for mismatched
+delimiters.
+} 
+features[1, :] = 'fodso'`
+ features[1, :] = 'fodso'`
+         
+{Error: Invalid expression. When calling a function or indexing a variable, use parentheses. Otherwise, check for mismatched
+delimiters.
+} 
+features(1, 1) = 'foo'
+{Unable to perform assignment because the size of the left side is 1-by-1 and the size of the right side is 1-by-3.
+} 
+features(1, :) = 'foodf'
+{Unable to perform assignment because the size of the left side is 1-by-2 and the size of the right side is 1-by-5.
+} 
+features(1, ) = 'foodf'
+ features(1, ) = 'foodf'
+             
+{Error: Invalid expression. When calling a function or indexing a variable, use parentheses. Otherwise, check for mismatched
+delimiters.
+} 
+features
+
+features =
+
+    26     5
+
+features = [size(files,1), 5]
+
+features =
+
+    26     5
+
+help matrixd
+
+matrixd not found.
+
+Use the Help browser search field to <a href="matlab:docsearch matrixd">search the documentation</a>, or
+type "<a href="matlab:help help">help help</a>" for help command options, such as help for methods.
+
+help matrix
+--- <strong>matrix</strong> not found. Showing help for <strong>ismatrix</strong> instead. ---
+
+ <strong>ismatrix</strong> True if input is a matrix.
+    <strong>ismatrix</strong>(M) returns logical 1 (true) if M is an m-by-n matrix, and
+    logical 0 (false) otherwise.
+ 
+    See also <a href="matlab:help isscalar">isscalar</a>, <a href="matlab:help isvector">isvector</a>, <a href="matlab:help isrow">isrow</a>, <a href="matlab:help iscolumn">iscolumn</a>, <a href="matlab:help isnumeric">isnumeric</a>, <a href="matlab:help islogical">islogical</a>,
+             <a href="matlab:help ischar">ischar</a>, <a href="matlab:help isempty">isempty</a>, <a href="matlab:help size">size</a>.
+
+    <a href="matlab:doc ismatrix">Reference page for ismatrix</a>
+    <a href="matlab:matlab.internal.language.introspective.overloads.displayOverloads('ismatrix')">Other functions named ismatrix</a>
+
+f = zeros(26, 5)
+
+f =
+
+     0     0     0     0     0
+     0     0     0     0     0
+     0     0     0     0     0
+     0     0     0     0     0
+     0     0     0     0     0
+     0     0     0     0     0
+     0     0     0     0     0
+     0     0     0     0     0
+     0     0     0     0     0
+     0     0     0     0     0
+     0     0     0     0     0
+     0     0     0     0     0
+     0     0     0     0     0
+     0     0     0     0     0
+     0     0     0     0     0
+     0     0     0     0     0
+     0     0     0     0     0
+     0     0     0     0     0
+     0     0     0     0     0
+     0     0     0     0     0
+     0     0     0     0     0
+     0     0     0     0     0
+     0     0     0     0     0
+     0     0     0     0     0
+     0     0     0     0     0
+     0     0     0     0     0
+
+f(1,:) = 'fooba'
+
+f =
+
+   102   111   111    98    97
+     0     0     0     0     0
+     0     0     0     0     0
+     0     0     0     0     0
+     0     0     0     0     0
+     0     0     0     0     0
+     0     0     0     0     0
+     0     0     0     0     0
+     0     0     0     0     0
+     0     0     0     0     0
+     0     0     0     0     0
+     0     0     0     0     0
+     0     0     0     0     0
+     0     0     0     0     0
+     0     0     0     0     0
+     0     0     0     0     0
+     0     0     0     0     0
+     0     0     0     0     0
+     0     0     0     0     0
+     0     0     0     0     0
+     0     0     0     0     0
+     0     0     0     0     0
+     0     0     0     0     0
+     0     0     0     0     0
+     0     0     0     0     0
+     0     0     0     0     0
+
+path_o = '../data/lesions/homogeneous/';
+path_e = '../data/lesions/heterogeneous/';
+files = dir(fullfile([path_o '*.nii']));
+features = zeros(size(files, 1), 5);
+for n = 1:size(files,1)
+    pathtemp = [path files(n).name];
+    nii = load_nii(pathtemp);
+    img = double(nii.img);
+    % Header
+    hdr = img.hdr;
+
+    % "Fix" the visualization based on the output/color scale
+    minimum = min(min(min(img)));% disp(num2str(minimum));
+    maximum = max(max(max(img)));% disp(num2str(maximum));
+    
+    % Normalize the image between 0 and 1
+    img = img - minimum;
+    img = img / maximum;
+    img = img * 1;
+    
+    % Calculate Metabolic Target Volume (in cc)
+    features(n, 1) = calc_vol(img) 
+end
+{Error using <a href="matlab:matlab.internal.language.introspective.errorDocCallback('load_nii_hdr', 'D:\Documents\MATLAB\NIfTI_20140122\load_nii_hdr.m', 32)" style="font-weight:bold">load_nii_hdr</a> (<a href="matlab: opentoline('D:\Documents\MATLAB\NIfTI_20140122\load_nii_hdr.m',32,0)">line 32</a>)
+Cannot find file "D:\Documents\MATLAB;D:\Documents\MATLAB\NIfTI_20140122;D:\Documents\MATLAB\spm12;C:\Program
+Files\MATLAB\R2018b\toolbox\matlab\datafun;C:\Program Files\MATLAB\R2018b\toolbox\matlab\datatypes;C:\Program
+Files\MATLAB\R2018b\toolbox\matlab\elfun;C:\Program Files\MATLAB\R2018b\toolbox\matlab\elmat;C:\Program
+Files\MATLAB\R2018b\toolbox\matlab\funfun;C:\Program Files\MATLAB\R2018b\toolbox\matlab\general;C:\Program
+Files\MATLAB\R2018b\toolbox\matlab\iofun;C:\Program Files\MATLAB\R2018b\toolbox\matlab\lang;C:\Program
+Files\MATLAB\R2018b\toolbox\matlab\matfun;C:\Program Files\MATLAB\R2018b\toolbox\matlab\mvm;C:\Program
+Files\MATLAB\R2018b\toolbox\matlab\ops;C:\Program Files\MATLAB\R2018b\toolbox\matlab\polyfun;C:\Program
+Files\MATLAB\R2018b\toolbox\matlab\randfun;C:\Program Files\MATLAB\R2018b\toolbox\matlab\sparfun;C:\Program
+Files\MATLAB\R2018b\toolbox\matlab\specfun;C:\Program Files\MATLAB\R2018b\toolbox\matlab\strfun;C:\Program
+Files\MATLAB\R2018b\toolbox\matlab\timefun;C:\Program Files\MATLAB\R2018b\toolbox\matlab\validators;C:\Program
+Files\MATLAB\R2018b\toolbox\matlab\demos;C:\Program Files\MATLAB\R2018b\toolbox\matlab\graph2d;C:\Program
+Files\MATLAB\R2018b\toolbox\matlab\graph3d;C:\Program Files\MATLAB\R2018b\toolbox\matlab\graphics;C:\Program
+Files\MATLAB\R2018b\toolbox\matlab\graphics\annotation;C:\Program
+Files\MATLAB\R2018b\toolbox\matlab\graphics\chart;C:\Program
+Files\MATLAB\R2018b\toolbox\matlab\graphics\illustration;C:\Program
+Files\MATLAB\R2018b\toolbox\matlab\graphics\legacy;C:\Program Files\MATLAB\R2018b\toolbox\matlab\graphics\obsolete;C:\Program
+Files\MATLAB\R2018b\toolbox\matlab\plottools;C:\Program Files\MATLAB\R2018b\toolbox\matlab\scribe;C:\Program
+Files\MATLAB\R2018b\toolbox\matlab\scribe\obsolete;C:\Program Files\MATLAB\R2018b\toolbox\matlab\specgraph;C:\Program
+Files\MATLAB\R2018b\toolbox\matlab\uitools;C:\Program Files\MATLAB\R2018b\toolbox\matlab\uitools\obsolete;C:\Program
+Files\MATLAB\R2018b\toolbox\matlab\hardware\stubs;C:\Program Files\MATLAB\R2018b\toolbox\matlab\images;C:\Program
+Files\MATLAB\R2018b\toolbox\local;C:\Program Files\MATLAB\R2018b\toolbox\matlab\maps;C:\Program
+Files\MATLAB\R2018b\toolbox\matlab\graphics\maps;C:\Program Files\MATLAB\R2018b\toolbox\matlab\optimfun;C:\Program
+Files\MATLAB\R2018b\toolbox\matlab\bigdata;C:\Program Files\MATLAB\R2018b\toolbox\matlab\codeanalysis\analysis;C:\Program
+Files\MATLAB\R2018b\toolbox\matlab\codetools;C:\Program
+Files\MATLAB\R2018b\toolbox\matlab\codetools\embeddedoutputs;C:\Program
+Files\MATLAB\R2018b\toolbox\matlab\datamanager;C:\Program Files\MATLAB\R2018b\toolbox\matlab\datastoreio;C:\Program
+Files\MATLAB\R2018b\toolbox\matlab\depfun;C:\Program Files\MATLAB\R2018b\toolbox\matlab\graphfun;C:\Program
+Files\MATLAB\R2018b\toolbox\matlab\guide;C:\Program Files\MATLAB\R2018b\toolbox\matlab\helptools;C:\Program
+Files\MATLAB\R2018b\toolbox\matlab\icons;C:\Program Files\MATLAB\R2018b\toolbox\matlab\mapreduceio;C:\Program
+Files\MATLAB\R2018b\toolbox\matlab\parallel;C:\Program
+Files\MATLAB\R2018b\toolbox\matlab\testframework\measurement\core;C:\Program
+Files\MATLAB\R2018b\toolbox\matlab\testframework\measurement\ext;C:\Program
+Files\MATLAB\R2018b\toolbox\matlab\testframework\mock\core;C:\Program
+Files\MATLAB\R2018b\toolbox\matlab\testframework\performance\core;C:\Program
+Files\MATLAB\R2018b\toolbox\matlab\testframework\uiautomation;C:\Program
+Files\MATLAB\R2018b\toolbox\matlab\testframework\uitest;C:\Program
+Files\MATLAB\R2018b\toolbox\matlab\testframework\ui\toolstrip;C:\Program
+Files\MATLAB\R2018b\toolbox\matlab\testframework\unittest\core;C:\Program
+Files\MATLAB\R2018b\toolbox\matlab\testframework\obsolete;C:\Program
+Files\MATLAB\R2018b\toolbox\matlab\testframework\unittest\ext;C:\Program
+Files\MATLAB\R2018b\toolbox\matlab\verctrl;C:\Program Files\MATLAB\R2018b\toolbox\matlab\winfun;C:\Program
+Files\MATLAB\R2018b\toolbox\matlab\winfun\NET;C:\Program Files\MATLAB\R2018b\toolbox\simulink\components;C:\Program
+Files\MATLAB\R2018b\toolbox\simulink\dee;C:\Program
+Files\MATLAB\R2018b\toolbox\coder\simulinkcoder_app\code_perspective;C:\Program
+Files\MATLAB\R2018b\toolbox\coder\simulinkcoder_app\report;C:\Program Files\MATLAB\R2018b\toolbox\rtw\accel;C:\Program
+Files\MATLAB\R2018b\toolbox\coder\simulinkcoder_core;C:\Program
+Files\MATLAB\R2018b\toolbox\coder\simulinkcoder_core\templates;C:\Program
+Files\MATLAB\R2018b\toolbox\coder\objectives;C:\Program
+Files\MATLAB\R2018b\toolbox\simulinktest\core\simharness\simharness;C:\Program
+Files\MATLAB\R2018b\toolbox\simulinktest\core\testsequence\testsequence;C:\Program
+Files\MATLAB\R2018b\toolbox\simulink\blocks\library;C:\Program
+Files\MATLAB\R2018b\toolbox\simulink\blocks\library\simulinkcoder;C:\Program
+Files\MATLAB\R2018b\toolbox\simulink\blocks\obsolete;C:\Program
+Files\MATLAB\R2018b\toolbox\simulink\blocks\pid_Images;C:\Program
+Files\MATLAB\R2018b\toolbox\simulink\configset_model\configset;C:\Program
+Files\MATLAB\R2018b\toolbox\simulink\configset_model\configset\derived;C:\Program
+Files\MATLAB\R2018b\toolbox\simulink\blocks;C:\Program Files\MATLAB\R2018b\toolbox\simulink\simulink\dataclasses;C:\Program
+Files\MATLAB\R2018b\toolbox\simulink\simulink;C:\Program Files\MATLAB\R2018b\toolbox\simulink\simulink\MPlayIO;C:\Program
+Files\MATLAB\R2018b\toolbox\simulink\simulink\dataobjectwizard;C:\Program
+Files\MATLAB\R2018b\toolbox\simulink\simulink\slresolve;C:\Program
+Files\MATLAB\R2018b\toolbox\simulink\simulink\units;C:\Program
+Files\MATLAB\R2018b\toolbox\simulink\simulink\model_transformer;C:\Program
+Files\MATLAB\R2018b\toolbox\simulink\simulink\clone_detection;C:\Program
+Files\MATLAB\R2018b\toolbox\simulink\simulink\sfuncheck;C:\Program
+Files\MATLAB\R2018b\toolbox\simulink\simulink\string;C:\Program
+Files\MATLAB\R2018b\toolbox\simulink\simulink\templates\core;C:\Program
+Files\MATLAB\R2018b\toolbox\simulink\simdemos\dataclasses;C:\Program Files\MATLAB\R2018b\toolbox\simulink\simdemos;C:\Program
+Files\MATLAB\R2018b\toolbox\simulink\simdemos\aerospace;C:\Program
+Files\MATLAB\R2018b\toolbox\simulink\simdemos\automotive;C:\Program
+Files\MATLAB\R2018b\toolbox\simulink\simdemos\simfeatures;C:\Program
+Files\MATLAB\R2018b\toolbox\simulink\simdemos\simfeatures\modelreference;C:\Program
+Files\MATLAB\R2018b\toolbox\simulink\simdemos\simfeatures\datadictionary;C:\Program
+Files\MATLAB\R2018b\toolbox\simulink\simdemos\automotive\fuelsys;C:\Program
+Files\MATLAB\R2018b\toolbox\simulink\simdemos\simgeneral;C:\Program
+Files\MATLAB\R2018b\toolbox\simulink\simdemos\industrial;C:\Program
+Files\MATLAB\R2018b\toolbox\simulink\simdemos\automotive\powerwindow;C:\Program
+Files\MATLAB\R2018b\toolbox\simulink\slmanifest;C:\Program Files\MATLAB\R2018b\toolbox\simulink\sldependency;C:\Program
+Files\MATLAB\R2018b\toolbox\simulink\diagram\mi\m;C:\Program Files\MATLAB\R2018b\toolbox\slde\slde;C:\Program
+Files\MATLAB\R2018b\toolbox\simulink\engine_interface;C:\Program
+Files\MATLAB\R2018b\toolbox\simulink\simulink_export_methods;C:\Program Files\MATLAB\R2018b\toolbox\simulink\hmi;C:\Program
+Files\MATLAB\R2018b\toolbox\simulink\hmi\customwebblocks\m;C:\Program
+Files\MATLAB\R2018b\toolbox\simulink\simulink\modeladvisor;C:\Program
+Files\MATLAB\R2018b\toolbox\simulink\simulink\modeladvisor\fixpt;C:\Program
+Files\MATLAB\R2018b\toolbox\simulink\simulink\modeladvisor\misra;C:\Program
+Files\MATLAB\R2018b\toolbox\simulink\simulink\modeladvisor\security;C:\Program
+Files\MATLAB\R2018b\toolbox\simulink\simulink\templates\product;C:\Program
+Files\MATLAB\R2018b\toolbox\simulink\sdi;C:\Program Files\MATLAB\R2018b\toolbox\simulink\sysarch\sysarch;C:\Program
+Files\MATLAB\R2018b\toolbox\simulink\simulink\frameedit;C:\Program
+Files\MATLAB\R2018b\toolbox\simulink\ui\library_browser\core\m;C:\Program
+Files\MATLAB\R2018b\toolbox\simulink\ui\studio\config\m;C:\Program
+Files\MATLAB\R2018b\toolbox\simulink\ui\sysdoc\core;C:\Program
+Files\MATLAB\R2018b\toolbox\simulink\webblocks\widgets\m;C:\Program
+Files\MATLAB\R2018b\toolbox\stateflow\stateflow;C:\Program Files\MATLAB\R2018b\toolbox\stateflow\coder;C:\Program
+Files\MATLAB\R2018b\toolbox\stateflow\sfdemos;C:\Program Files\MATLAB\R2018b\toolbox\stateflow\ui\studio\config\m;C:\Program
+Files\MATLAB\R2018b\toolbox\matlab\addons;C:\Program Files\MATLAB\R2018b\toolbox\matlab\addons\cef;C:\Program
+Files\MATLAB\R2018b\toolbox\matlab\addons\supportpackages;C:\Program
+Files\MATLAB\R2018b\toolbox\matlab\addons_product;C:\Program
+Files\MATLAB\R2018b\toolbox\matlab\supportpackagemanagement;C:\Program
+Files\MATLAB\R2018b\toolbox\matlab\addon_enable_disable_management\matlab;C:\Program
+Files\MATLAB\R2018b\toolbox\matlab\appcontainer\appcontainer;C:\Program
+Files\MATLAB\R2018b\toolbox\matlab\appdesigner\appdesigner;C:\Program
+Files\MATLAB\R2018b\toolbox\matlab\appdesigner\appdesigner\interface;C:\Program
+Files\MATLAB\R2018b\toolbox\matlab\appdesigner\appdesigner\runtime;C:\Program
+Files\MATLAB\R2018b\toolbox\matlab\apps;C:\Program Files\MATLAB\R2018b\toolbox\matlab\audiovideo;C:\Program
+Files\MATLAB\R2018b\toolbox\rtw\targets\AUTOSAR\AUTOSAR\dataclasses;C:\Program
+Files\MATLAB\R2018b\toolbox\rtw\targets\AUTOSAR\AUTOSAR;C:\Program Files\MATLAB\R2018b\toolbox\batchsim;C:\Program
+Files\MATLAB\R2018b\toolbox\bioinfo\bioinfodata;C:\Program Files\MATLAB\R2018b\toolbox\matlab\cefclient;C:\Program
+Files\MATLAB\R2018b\toolbox\clone_detection_app\m;C:\Program Files\MATLAB\R2018b\toolbox\coder\codedescriptor_core;C:\Program
+Files\MATLAB\R2018b\toolbox\coder\coder;C:\Program Files\MATLAB\R2018b\toolbox\coder\connectivity;C:\Program
+Files\MATLAB\R2018b\toolbox\rtw\targets\connectivity;C:\Program Files\MATLAB\R2018b\toolbox\coder\emlcodermex;C:\Program
+Files\MATLAB\R2018b\toolbox\coder\coverage;C:\Program Files\MATLAB\R2018b\toolbox\coder\cpptools;C:\Program
+Files\MATLAB\R2018b\toolbox\rtw\rtw;C:\Program Files\MATLAB\R2018b\toolbox\coder\foundation;C:\Program
+Files\MATLAB\R2018b\toolbox\coder\foundation\build;C:\Program
+Files\MATLAB\R2018b\toolbox\coder\foundation\build\tools\registry;C:\Program
+Files\MATLAB\R2018b\toolbox\coder\foundation\tfl;C:\Program
+Files\MATLAB\R2018b\toolbox\coder\foundation\tfl\AUTOSAR\AUTOSAR4p0\IFX;C:\Program
+Files\MATLAB\R2018b\toolbox\coder\foundation\tfl\AUTOSAR\AUTOSAR4p0\IFL;C:\Program
+Files\MATLAB\R2018b\toolbox\coder\foundation\tfl\gui;C:\Program
+Files\MATLAB\R2018b\toolbox\coder\foundation\templates;C:\Program Files\MATLAB\R2018b\toolbox\shared\simtargets;C:\Program
+Files\MATLAB\R2018b\toolbox\coder\profile;C:\Program Files\MATLAB\R2018b\toolbox\coder\rtiostream;C:\Program
+Files\MATLAB\R2018b\toolbox\coder\trace;C:\Program Files\MATLAB\R2018b\toolbox\coder\xcp;C:\Program
+Files\MATLAB\R2018b\toolbox\shared\comparisons;C:\Program
+Files\MATLAB\R2018b\toolbox\simulink\compiled_model_interface;C:\Program
+Files\MATLAB\R2018b\toolbox\matlab\configtools;C:\Program Files\MATLAB\R2018b\toolbox\matlab\connector2\academy;C:\Program
+Files\MATLAB\R2018b\toolbox\matlab\connector2\common;C:\Program
+Files\MATLAB\R2018b\toolbox\matlab\connector2\configuration;C:\Program
+Files\MATLAB\R2018b\toolbox\matlab\connector2\connector;C:\Program
+Files\MATLAB\R2018b\toolbox\matlab\connector2\editor;C:\Program
+Files\MATLAB\R2018b\toolbox\matlab\connector2\figures;C:\Program
+Files\MATLAB\R2018b\toolbox\matlab\connector2\file;C:\Program
+Files\MATLAB\R2018b\toolbox\matlab\connector2\framework;C:\Program
+Files\MATLAB\R2018b\toolbox\matlab\connector2\http;C:\Program
+Files\MATLAB\R2018b\toolbox\matlab\connector2\interpreter;C:\Program
+Files\MATLAB\R2018b\toolbox\matlab\connector2\json;C:\Program Files\MATLAB\R2018b\toolbox\matlab\connector2\logger;C:\Program
+Files\MATLAB\R2018b\toolbox\matlab\connector2\messageservice;C:\Program
+Files\MATLAB\R2018b\toolbox\matlab\connector2\mgg;C:\Program
+Files\MATLAB\R2018b\toolbox\matlab\connector2\microservices;C:\Program
+Files\MATLAB\R2018b\toolbox\matlab\connector2\nativebridge;C:\Program
+Files\MATLAB\R2018b\toolbox\matlab\connector2\restmatlab;C:\Program
+Files\MATLAB\R2018b\toolbox\matlab\connector2\session;C:\Program
+Files\MATLAB\R2018b\toolbox\matlab\connector2\shadowfiles;C:\Program
+Files\MATLAB\R2018b\toolbox\matlab\connector2\visualization;C:\Program
+Files\MATLAB\R2018b\toolbox\matlab\connector2\worker;C:\Program Files\MATLAB\R2018b\toolbox\control\control;C:\Program
+Files\MATLAB\R2018b\toolbox\control\ctrlmodels;C:\Program Files\MATLAB\R2018b\toolbox\control\ctrlanalysis;C:\Program
+Files\MATLAB\R2018b\toolbox\control\ctrldesign;C:\Program Files\MATLAB\R2018b\toolbox\control\ctrlplots;C:\Program
+Files\MATLAB\R2018b\toolbox\control\ctrlguis;C:\Program Files\MATLAB\R2018b\toolbox\control\ctrlobsolete;C:\Program
+Files\MATLAB\R2018b\toolbox\control\ctrlutil;C:\Program Files\MATLAB\R2018b\toolbox\control\ctrldemos;C:\Program
+Files\MATLAB\R2018b\help\toolbox\control\examples;C:\Program Files\MATLAB\R2018b\toolbox\shared\cosimservice\ddg;C:\Program
+Files\MATLAB\R2018b\toolbox\matlab\reports;C:\Program Files\MATLAB\R2018b\toolbox\daq\daq;C:\Program
+Files\MATLAB\R2018b\toolbox\daq\apps\daqaiapplet;C:\Program Files\MATLAB\R2018b\toolbox\daq\apps\shared;C:\Program
+Files\MATLAB\R2018b\toolbox\daq\daqdemos;C:\Program Files\MATLAB\R2018b\toolbox\daq\apps\provider;C:\Program
+Files\MATLAB\R2018b\toolbox\daq\daqsdk\bin\win64;C:\Program Files\MATLAB\R2018b\toolbox\daq\daqsdk;C:\Program
+Files\MATLAB\R2018b\toolbox\daq\daqsdk\tests;C:\Program Files\MATLAB\R2018b\toolbox\daq\daqblks;C:\Program
+Files\MATLAB\R2018b\toolbox\daq\daqblks\daqsfcn;C:\Program
+Files\MATLAB\R2018b\toolbox\matlab\datatools\datatoolsservices\matlab;C:\Program
+Files\MATLAB\R2018b\toolbox\matlab\datatools\importtool\matlab\peer;C:\Program
+Files\MATLAB\R2018b\toolbox\matlab\datatools\importtool\matlab\server;C:\Program
+Files\MATLAB\R2018b\toolbox\matlab\datatools\inspector\matlab;C:\Program
+Files\MATLAB\R2018b\toolbox\matlab\datatools\peermodel_mcos\matlab;C:\Program
+Files\MATLAB\R2018b\toolbox\matlab\datatools\plotstab\matlab;C:\Program
+Files\MATLAB\R2018b\toolbox\matlab\datatools\variableeditor\matlab;C:\Program
+Files\MATLAB\R2018b\toolbox\matlab\datatools\workspacebrowser\matlab;C:\Program
+Files\MATLAB\R2018b\toolbox\dig\dig;C:\Program Files\MATLAB\R2018b\toolbox\shared\dastudio\dpvu\dpvu;C:\Program
+Files\MATLAB\R2018b\toolbox\shared\dastudio\dpvu\dpvu\metamodel;C:\Program
+Files\MATLAB\R2018b\toolbox\shared\dastudio\dpvu\dpvu\actions;C:\Program Files\MATLAB\R2018b\toolbox\dsp\dsp;C:\Program
+Files\MATLAB\R2018b\toolbox\dsp\dsputilities;C:\Program Files\MATLAB\R2018b\toolbox\dsp\dsputilities\dspinit;C:\Program
+Files\MATLAB\R2018b\toolbox\dsp\dsputilities\dspmex;C:\Program Files\MATLAB\R2018b\toolbox\dsp\dsp\compiled;C:\Program
+Files\MATLAB\R2018b\toolbox\dsp\dsphdl;C:\Program Files\MATLAB\R2018b\toolbox\dsp\dsphdl\compiled;C:\Program
+Files\MATLAB\R2018b\toolbox\dsp\dsphdl\dsputilities;C:\Program Files\MATLAB\R2018b\toolbox\dsp\dspdemos;C:\Program
+Files\MATLAB\R2018b\help\toolbox\dsp\examples;C:\Program Files\MATLAB\R2018b\toolbox\shared\spc\src_ml;C:\Program
+Files\MATLAB\R2018b\toolbox\shared\dsp\simulink\dsp;C:\Program Files\MATLAB\R2018b\toolbox\dsp\templates;C:\Program
+Files\MATLAB\R2018b\toolbox\shared\dsp\visionhdl\simulink\dsp;C:\Program Files\MATLAB\R2018b\toolbox\eml\eml;C:\Program
+Files\MATLAB\R2018b\toolbox\matlab\external\engines\engine_api;C:\Program Files\MATLAB\R2018b\examples\audio;C:\Program
+Files\MATLAB\R2018b\examples\coder_compiler_dsp;C:\Program Files\MATLAB\R2018b\examples\coder_fixedpoint_simulink;C:\Program
+Files\MATLAB\R2018b\examples\comm;C:\Program Files\MATLAB\R2018b\examples\control;C:\Program
+Files\MATLAB\R2018b\examples\controls_id;C:\Program Files\MATLAB\R2018b\examples\control_featured;C:\Program
+Files\MATLAB\R2018b\examples\daq;C:\Program Files\MATLAB\R2018b\examples\deeplearning_shared;C:\Program
+Files\MATLAB\R2018b\examples\dsp;C:\Program Files\MATLAB\R2018b\examples\fuelsys_shared;C:\Program
+Files\MATLAB\R2018b\examples\graphics;C:\Program Files\MATLAB\R2018b\examples\graphics2;C:\Program
+Files\MATLAB\R2018b\examples\hdlcoder;C:\Program Files\MATLAB\R2018b\examples\hdlfilter;C:\Program
+Files\MATLAB\R2018b\examples\ident;C:\Program Files\MATLAB\R2018b\examples\ident_featured;C:\Program
+Files\MATLAB\R2018b\examples\images;C:\Program Files\MATLAB\R2018b\examples\instrument;C:\Program
+Files\MATLAB\R2018b\examples\matlab;C:\Program Files\MATLAB\R2018b\examples\matlab_featured;C:\Program
+Files\MATLAB\R2018b\examples\nnet;C:\Program Files\MATLAB\R2018b\examples\optim;C:\Program
+Files\MATLAB\R2018b\examples\phased;C:\Program Files\MATLAB\R2018b\examples\predmaint;C:\Program
+Files\MATLAB\R2018b\examples\predmaint_shared;C:\Program Files\MATLAB\R2018b\examples\signal;C:\Program
+Files\MATLAB\R2018b\examples\simbio;C:\Program Files\MATLAB\R2018b\examples\simulink;C:\Program
+Files\MATLAB\R2018b\examples\slcontrol;C:\Program Files\MATLAB\R2018b\examples\sldo;C:\Program
+Files\MATLAB\R2018b\examples\stats;C:\Program Files\MATLAB\R2018b\examples\stats_featured;C:\Program
+Files\MATLAB\R2018b\examples\symbolic;C:\Program Files\MATLAB\R2018b\toolbox\matlab\filebrowser;C:\Program
+Files\MATLAB\R2018b\toolbox\dsp\filterdesign;C:\Program Files\MATLAB\R2018b\toolbox\matlab\findfiles;C:\Program
+Files\MATLAB\R2018b\toolbox\fixedpoint\fixedpointtool;C:\Program Files\MATLAB\R2018b\toolbox\fixedpoint\fidemos;C:\Program
+Files\MATLAB\R2018b\toolbox\fixedpoint\fixedpoint;C:\Program Files\MATLAB\R2018b\toolbox\fixpoint;C:\Program
+Files\MATLAB\R2018b\toolbox\fixpoint\fpca;C:\Program Files\MATLAB\R2018b\toolbox\fixpoint\fxptopo;C:\Program
+Files\MATLAB\R2018b\toolbox\shared\fmu_block;C:\Program
+Files\MATLAB\R2018b\toolbox\matlab\uitools\uicomponents\components;C:\Program
+Files\MATLAB\R2018b\toolbox\hdlcoder\hdlcommon;C:\Program
+Files\MATLAB\R2018b\toolbox\hdlcoder\hdlcommon\modelcheckeradvisor;C:\Program
+Files\MATLAB\R2018b\toolbox\hdlcoder\hdllib\ml_lib;C:\Program Files\MATLAB\R2018b\toolbox\hdlcoder\hdllib\sl_lib;C:\Program
+Files\MATLAB\R2018b\toolbox\hdlcoder\hdlslrt;C:\Program Files\MATLAB\R2018b\toolbox\shared\hadoopserializer;C:\Program
+Files\MATLAB\R2018b\toolbox\shared\appdes\services;C:\Program
+Files\MATLAB\R2018b\toolbox\shared\hwmanager\hwconnection;C:\Program
+Files\MATLAB\R2018b\toolbox\shared\hwmanager\hwmanagerapp;C:\Program
+Files\MATLAB\R2018b\toolbox\shared\hwmanager\hwmanagerapp\devices;C:\Program
+Files\MATLAB\R2018b\toolbox\shared\hwmanager\hwmanagerapp\providers;C:\Program
+Files\MATLAB\R2018b\toolbox\shared\hwmanager\hwmanagerapp\plugins;C:\Program
+Files\MATLAB\R2018b\toolbox\shared\hwmanager\hwmanagerapp\framework;C:\Program
+Files\MATLAB\R2018b\toolbox\shared\hwmanager\hwmanagerapp\framework\modules;C:\Program
+Files\MATLAB\R2018b\toolbox\shared\hwmanager\hwmanagerapp\hwsetup;C:\Program
+Files\MATLAB\R2018b\toolbox\shared\hwmanager\hwservices\hwinfo;C:\Program
+Files\MATLAB\R2018b\toolbox\shared\hwmanager\hwsetup;C:\Program
+Files\MATLAB\R2018b\toolbox\shared\hwmanager\hwsetup\hwwidgets;C:\Program
+Files\MATLAB\R2018b\toolbox\shared\hwmanager\hwsetup\hwtemplates;C:\Program
+Files\MATLAB\R2018b\toolbox\shared\hwmanager\hwsetup\launch;C:\Program
+Files\MATLAB\R2018b\toolbox\shared\hwmanager\logger;C:\Program Files\MATLAB\R2018b\toolbox\idelink\foundation;C:\Program
+Files\MATLAB\R2018b\toolbox\idelink\foundation\autointerface;C:\Program
+Files\MATLAB\R2018b\toolbox\idelink\foundation\autointerface\ideregisterplugins;C:\Program
+Files\MATLAB\R2018b\toolbox\idelink\foundation\util;C:\Program
+Files\MATLAB\R2018b\toolbox\idelink\foundation\errorhandler;C:\Program
+Files\MATLAB\R2018b\toolbox\idelink\foundation\xmakefile;C:\Program
+Files\MATLAB\R2018b\toolbox\idelink\foundation\hookpoints;C:\Program
+Files\MATLAB\R2018b\toolbox\images\colorspaces;C:\Program Files\MATLAB\R2018b\toolbox\images\images;C:\Program
+Files\MATLAB\R2018b\toolbox\images\imdata;C:\Program Files\MATLAB\R2018b\toolbox\images\imuitools;C:\Program
+Files\MATLAB\R2018b\toolbox\images\iptformats;C:\Program Files\MATLAB\R2018b\toolbox\images\iptutils;C:\Program
+Files\MATLAB\R2018b\toolbox\matlab\imagesci;C:\Program Files\MATLAB\R2018b\toolbox\images\imdemos;C:\Program
+Files\MATLAB\R2018b\toolbox\instrument\instrument;C:\Program
+Files\MATLAB\R2018b\toolbox\instrument\instrumentblks\instrumentblks;C:\Program
+Files\MATLAB\R2018b\toolbox\instrument\instrumentblks\instrumentmex;C:\Program
+Files\MATLAB\R2018b\toolbox\instrument\instrumentblks\instrumentmasks;C:\Program
+Files\MATLAB\R2018b\toolbox\instrument\instrumentdemos;C:\Program Files\MATLAB\R2018b\toolbox\shared\instrument;C:\Program
+Files\MATLAB\R2018b\toolbox\simulink\libcodegen_harness\libcodegen_harness;C:\Program
+Files\MATLAB\R2018b\toolbox\shared\spcuilib\logicanalyzer;C:\Program Files\MATLAB\R2018b\toolbox\shared\m3i;C:\Program
+Files\MATLAB\R2018b\toolbox\simulink\mask\iconeditor;C:\Program
+Files\MATLAB\R2018b\toolbox\shared\spcuilib\matrixviewer;C:\Program Files\MATLAB\R2018b\toolbox\matlab\mex;C:\Program
+Files\MATLAB\R2018b\toolbox\shared\mldatx;C:\Program Files\MATLAB\R2018b\toolbox\multisim;C:\Program
+Files\MATLAB\R2018b\toolbox\fixedpoint\ui\nedFunctionApproximationTool;C:\Program
+Files\MATLAB\R2018b\toolbox\fixedpoint\ui\nedVisuals;C:\Program Files\MATLAB\R2018b\toolbox\matlab\networklib;C:\Program
+Files\MATLAB\R2018b\toolbox\nnet;C:\Program Files\MATLAB\R2018b\toolbox\nnet\nncontrol;C:\Program
+Files\MATLAB\R2018b\toolbox\nnet\nnet;C:\Program Files\MATLAB\R2018b\toolbox\nnet\nnet\nnadapt;C:\Program
+Files\MATLAB\R2018b\toolbox\nnet\nnet\nndatafun;C:\Program Files\MATLAB\R2018b\toolbox\nnet\nnet\nnderivative;C:\Program
+Files\MATLAB\R2018b\toolbox\nnet\nnet\nndistance;C:\Program Files\MATLAB\R2018b\toolbox\nnet\nnet\nndivision;C:\Program
+Files\MATLAB\R2018b\toolbox\nnet\nnet\nninitlayer;C:\Program Files\MATLAB\R2018b\toolbox\nnet\nnet\nninitnetwork;C:\Program
+Files\MATLAB\R2018b\toolbox\nnet\nnet\nninitweight;C:\Program Files\MATLAB\R2018b\toolbox\nnet\nnet\nnlearn;C:\Program
+Files\MATLAB\R2018b\toolbox\nnet\nnet\nnnetfun;C:\Program Files\MATLAB\R2018b\toolbox\nnet\nnet\nnnetinput;C:\Program
+Files\MATLAB\R2018b\toolbox\nnet\nnet\nnnetwork;C:\Program Files\MATLAB\R2018b\toolbox\nnet\nnet\nnperformance;C:\Program
+Files\MATLAB\R2018b\toolbox\nnet\nnet\nnplot;C:\Program Files\MATLAB\R2018b\toolbox\nnet\nnet\nnprocess;C:\Program
+Files\MATLAB\R2018b\toolbox\nnet\nnet\nnsearch;C:\Program Files\MATLAB\R2018b\toolbox\nnet\nnet\nntopology;C:\Program
+Files\MATLAB\R2018b\toolbox\nnet\nnet\nntrain;C:\Program Files\MATLAB\R2018b\toolbox\nnet\nnet\nntransfer;C:\Program
+Files\MATLAB\R2018b\toolbox\nnet\nnet\nnweight;C:\Program Files\MATLAB\R2018b\toolbox\nnet\nnguis;C:\Program
+Files\MATLAB\R2018b\toolbox\nnet\nnobsolete;C:\Program Files\MATLAB\R2018b\toolbox\nnet\nnutils;C:\Program
+Files\MATLAB\R2018b\toolbox\nnet\cnn;C:\Program Files\MATLAB\R2018b\toolbox\nnet\deepapp;C:\Program
+Files\MATLAB\R2018b\toolbox\nnet\nndemos;C:\Program Files\MATLAB\R2018b\toolbox\nnet\nndemos\nndatasets;C:\Program
+Files\MATLAB\R2018b\toolbox\optim\optim;C:\Program Files\MATLAB\R2018b\toolbox\optim;C:\Program
+Files\MATLAB\R2018b\toolbox\optim\optimdemos;C:\Program Files\MATLAB\R2018b\toolbox\optim\problemdef;C:\Program
+Files\MATLAB\R2018b\toolbox\matlab\pathtool;C:\Program Files\MATLAB\R2018b\toolbox\shared\codeinstrum\codeinstrum;C:\Program
+Files\MATLAB\R2018b\toolbox\shared\cxxfe_mi\cxxfe_mi;C:\Program Files\MATLAB\R2018b\toolbox\shared\polyspace;C:\Program
+Files\MATLAB\R2018b\toolbox\matlab\external\interfaces\python;C:\Program Files\MATLAB\R2018b\toolbox\realtime;C:\Program
+Files\MATLAB\R2018b\toolbox\realtime\realtime;C:\Program Files\MATLAB\R2018b\toolbox\realtime\realtime\rtw;C:\Program
+Files\MATLAB\R2018b\toolbox\matlab\resources_folder;C:\Program Files\MATLAB\R2018b\toolbox\rptgenext\slxmlcomp;C:\Program
+Files\MATLAB\R2018b\toolbox\rptgenext\rptgenextdemos\slxmlcomp;C:\Program
+Files\MATLAB\R2018b\toolbox\rptgen\xmlcomp;C:\Program Files\MATLAB\R2018b\toolbox\matlab\serial;C:\Program
+Files\MATLAB\R2018b\toolbox\simulink\blocks\sb2sl;C:\Program Files\MATLAB\R2018b\toolbox\shared\advisor;C:\Program
+Files\MATLAB\R2018b\toolbox\shared\asynciolib;C:\Program Files\MATLAB\R2018b\toolbox\shared\cgir_fe;C:\Program
+Files\MATLAB\R2018b\toolbox\shared\cgxe\cgxe;C:\Program Files\MATLAB\R2018b\toolbox\shared\cmlink\api;C:\Program
+Files\MATLAB\R2018b\toolbox\shared\coder\coder;C:\Program Files\MATLAB\R2018b\toolbox\shared\configset;C:\Program
+Files\MATLAB\R2018b\toolbox\shared\configset_view\m;C:\Program
+Files\MATLAB\R2018b\toolbox\shared\controllib\engine;C:\Program
+Files\MATLAB\R2018b\toolbox\shared\controllib\engine\numerics;C:\Program
+Files\MATLAB\R2018b\toolbox\shared\controllib\engine\options;C:\Program
+Files\MATLAB\R2018b\toolbox\shared\controllib\engine\optim;C:\Program
+Files\MATLAB\R2018b\toolbox\shared\controllib\engine\blocks;C:\Program
+Files\MATLAB\R2018b\toolbox\shared\controllib\estimation;C:\Program
+Files\MATLAB\R2018b\toolbox\shared\controllib\general;C:\Program
+Files\MATLAB\R2018b\toolbox\shared\controllib\graphics;C:\Program
+Files\MATLAB\R2018b\toolbox\shared\controllib\graphics\utils;C:\Program
+Files\MATLAB\R2018b\toolbox\shared\controllib\graphics\plotoptions;C:\Program
+Files\MATLAB\R2018b\toolbox\shared\controllib\requirements;C:\Program
+Files\MATLAB\R2018b\toolbox\shared\cxxfe\parser_mi\parser_mi;C:\Program
+Files\MATLAB\R2018b\toolbox\shared\dastudio;C:\Program Files\MATLAB\R2018b\toolbox\shared\dataflow;C:\Program
+Files\MATLAB\R2018b\toolbox\shared\dataflow\dataflowmex\dataflow_mex;C:\Program
+Files\MATLAB\R2018b\toolbox\shared\deviceplugindetection;C:\Program
+Files\MATLAB\R2018b\toolbox\shared\dspblks\dspblks;C:\Program Files\MATLAB\R2018b\toolbox\shared\dspblks\dspmex;C:\Program
+Files\MATLAB\R2018b\toolbox\shared\dsp\dialog;C:\Program Files\MATLAB\R2018b\toolbox\shared\dsp\float2fixed;C:\Program
+Files\MATLAB\R2018b\toolbox\shared\dsp\hdl;C:\Program Files\MATLAB\R2018b\toolbox\shared\dsp\scopes;C:\Program
+Files\MATLAB\R2018b\toolbox\shared\dsp\vision\matlab\utilities;C:\Program
+Files\MATLAB\R2018b\toolbox\shared\dsp\vision\simulink\utilities;C:\Program
+Files\MATLAB\R2018b\toolbox\shared\dsp\vision\matlab\utilities\mex;C:\Program
+Files\MATLAB\R2018b\toolbox\shared\dsp\vision\simulink\utilities\mex;C:\Program
+Files\MATLAB\R2018b\toolbox\shared\dsp\vision\matlab\utilities\init;C:\Program
+Files\MATLAB\R2018b\toolbox\shared\dsp\vision\matlab\vision;C:\Program
+Files\MATLAB\R2018b\toolbox\shared\dsp\vision\simulink\vision;C:\Program
+Files\MATLAB\R2018b\toolbox\shared\dsp\webscopes;C:\Program Files\MATLAB\R2018b\toolbox\shared\filterdesignlib;C:\Program
+Files\MATLAB\R2018b\toolbox\shared\filterdesignlib\filterbuilder;C:\Program
+Files\MATLAB\R2018b\toolbox\shared\fusion\utils;C:\Program Files\MATLAB\R2018b\toolbox\shared\hdlshared;C:\Program
+Files\MATLAB\R2018b\toolbox\shared\hdlshared\hdlshared_gui;C:\Program
+Files\MATLAB\R2018b\toolbox\shared\hdlshared\hdlshared_soc;C:\Program
+Files\MATLAB\R2018b\toolbox\shared\hotpluglib;C:\Program Files\MATLAB\R2018b\toolbox\shared\hwconnectinstaller;C:\Program
+Files\MATLAB\R2018b\toolbox\shared\hwconnectinstaller\common;C:\Program
+Files\MATLAB\R2018b\toolbox\shared\imageslib;C:\Program Files\MATLAB\R2018b\toolbox\shared\imageio;C:\Program
+Files\MATLAB\R2018b\toolbox\shared\io;C:\Program Files\MATLAB\R2018b\toolbox\shared\maputils;C:\Program
+Files\MATLAB\R2018b\toolbox\shared\measure;C:\Program Files\MATLAB\R2018b\toolbox\shared\mlearnlib;C:\Program
+Files\MATLAB\R2018b\toolbox\shared\mlreportgen\dom;C:\Program
+Files\MATLAB\R2018b\toolbox\shared\mlreportgen\dom\dom;C:\Program
+Files\MATLAB\R2018b\toolbox\shared\mlreportgen\dom\dom\help;C:\Program
+Files\MATLAB\R2018b\toolbox\shared\mlreportgen\ppt;C:\Program
+Files\MATLAB\R2018b\toolbox\shared\mlreportgen\ppt\ppt;C:\Program
+Files\MATLAB\R2018b\toolbox\shared\mlreportgen\ppt\ppt\help;C:\Program
+Files\MATLAB\R2018b\toolbox\shared\mlreportgen\rpt;C:\Program
+Files\MATLAB\R2018b\toolbox\shared\mlreportgen\rpt\rpt;C:\Program
+Files\MATLAB\R2018b\toolbox\shared\mlreportgen\utils;C:\Program Files\MATLAB\R2018b\toolbox\shared\multimedia;C:\Program
+Files\MATLAB\R2018b\toolbox\shared\networklib;C:\Program Files\MATLAB\R2018b\toolbox\shared\optimlib;C:\Program
+Files\MATLAB\R2018b\toolbox\shared\reqmgt;C:\Program Files\MATLAB\R2018b\toolbox\shared\reqmgt\mmutils;C:\Program
+Files\MATLAB\R2018b\toolbox\shared\rptgen;C:\Program Files\MATLAB\R2018b\toolbox\shared\sdi;C:\Program
+Files\MATLAB\R2018b\toolbox\shared\sdi_visuals;C:\Program Files\MATLAB\R2018b\toolbox\shared\seriallib;C:\Program
+Files\MATLAB\R2018b\toolbox\shared\sigbldr;C:\Program Files\MATLAB\R2018b\toolbox\shared\siglib;C:\Program
+Files\MATLAB\R2018b\toolbox\shared\signalwavelet\signalwavelet;C:\Program
+Files\MATLAB\R2018b\toolbox\shared\simulink\sysarch\sysarch;C:\Program
+Files\MATLAB\R2018b\toolbox\shared\slcc\slcc;C:\Program Files\MATLAB\R2018b\toolbox\shared\slcc_cov\slcc_cov;C:\Program
+Files\MATLAB\R2018b\toolbox\shared\slci\slci;C:\Program Files\MATLAB\R2018b\toolbox\shared\slcontrollib;C:\Program
+Files\MATLAB\R2018b\toolbox\shared\sl_coverage_configset;C:\Program Files\MATLAB\R2018b\toolbox\shared\sldv;C:\Program
+Files\MATLAB\R2018b\toolbox\shared\sldv_cc\sldv_cc;C:\Program Files\MATLAB\R2018b\toolbox\shared\sl_multicore\dfs;C:\Program
+Files\MATLAB\R2018b\toolbox\shared\slreportgen\reportexplorer;C:\Program
+Files\MATLAB\R2018b\toolbox\shared\slreportgen\rpt;C:\Program
+Files\MATLAB\R2018b\toolbox\shared\slreportgen\rpt\rpt;C:\Program
+Files\MATLAB\R2018b\toolbox\shared\slreportgen\utils;C:\Program
+Files\MATLAB\R2018b\toolbox\shared\spcuilib\slscopes;C:\Program Files\MATLAB\R2018b\toolbox\shared\slvnv;C:\Program
+Files\MATLAB\R2018b\toolbox\shared\sl_async_streaming;C:\Program Files\MATLAB\R2018b\toolbox\shared\sl_web_widgets;C:\Program
+Files\MATLAB\R2018b\toolbox\shared\spreadsheet;C:\Program Files\MATLAB\R2018b\toolbox\shared\statslib;C:\Program
+Files\MATLAB\R2018b\toolbox\shared\statslib\sensitivity;C:\Program
+Files\MATLAB\R2018b\toolbox\shared\supportpkgservices\legacysupportpkginfo;C:\Program
+Files\MATLAB\R2018b\toolbox\shared\supportpkgservices\installservices;C:\Program
+Files\MATLAB\R2018b\toolbox\shared\supportpkgservices\supportpackageroot;C:\Program
+Files\MATLAB\R2018b\toolbox\shared\supportpkgservices\installedapi;C:\Program
+Files\MATLAB\R2018b\toolbox\shared\supportsoftware\launcher;C:\Program
+Files\MATLAB\R2018b\toolbox\shared\supportsoftware\services;C:\Program
+Files\MATLAB\R2018b\toolbox\shared\supportsoftware\upgrade;C:\Program
+Files\MATLAB\R2018b\toolbox\shared\system\coder;C:\Program Files\MATLAB\R2018b\toolbox\shared\system\coreblocks;C:\Program
+Files\MATLAB\R2018b\toolbox\shared\system\sfun;C:\Program Files\MATLAB\R2018b\toolbox\shared\system\simulink;C:\Program
+Files\MATLAB\R2018b\toolbox\shared\testmeaslib\general;C:\Program
+Files\MATLAB\R2018b\toolbox\shared\testmeaslib\graphics;C:\Program
+Files\MATLAB\R2018b\toolbox\shared\testmeaslib\simulink;C:\Program
+Files\MATLAB\R2018b\toolbox\shared\tracking\trackinglib;C:\Program
+Files\MATLAB\R2018b\toolbox\shared\tracking\trackinglib\blocks;C:\Program
+Files\MATLAB\R2018b\toolbox\shared\transportlib;C:\Program Files\MATLAB\R2018b\toolbox\shared\virtualfileio;C:\Program
+Files\MATLAB\R2018b\toolbox\signal\signal;C:\Program Files\MATLAB\R2018b\toolbox\signal\sigtools;C:\Program
+Files\MATLAB\R2018b\toolbox\signal\sptoolgui;C:\Program Files\MATLAB\R2018b\toolbox\signal\sigdemos;C:\Program
+Files\MATLAB\R2018b\toolbox\signal\signalanalyzer;C:\Program Files\MATLAB\R2018b\toolbox\signal\signalanalyzereng;C:\Program
+Files\MATLAB\R2018b\toolbox\simbio\simbio;C:\Program Files\MATLAB\R2018b\toolbox\simbio\simbiodemos;C:\Program
+Files\MATLAB\R2018b\toolbox\shared\simulink;C:\Program
+Files\MATLAB\R2018b\toolbox\shared\simulation_data_repository;C:\Program Files\MATLAB\R2018b\toolbox\sl3d\sl3d;C:\Program
+Files\MATLAB\R2018b\toolbox\sl3d\sl3ddemos;C:\Program Files\MATLAB\R2018b\toolbox\coder\foundation\passmanager;C:\Program
+Files\MATLAB\R2018b\toolbox\shared\simulink\slcheck_services;C:\Program
+Files\MATLAB\R2018b\toolbox\slcontrol\slcontrol;C:\Program Files\MATLAB\R2018b\toolbox\slcontrol\slctrlguis;C:\Program
+Files\MATLAB\R2018b\toolbox\slcontrol\slctrlutil;C:\Program Files\MATLAB\R2018b\toolbox\slcontrol\slctrlobsolete;C:\Program
+Files\MATLAB\R2018b\toolbox\slcontrol\slctrldemos;C:\Program Files\MATLAB\R2018b\help\toolbox\slcontrol\examples;C:\Program
+Files\MATLAB\R2018b\toolbox\slcoverage;C:\Program
+Files\MATLAB\R2018b\toolbox\simulink\simulink_data_dictionary\sldd;C:\Program
+Files\MATLAB\R2018b\toolbox\sldv\sldv;C:\Program Files\MATLAB\R2018b\toolbox\simulink\slexportprevious;C:\Program
+Files\MATLAB\R2018b\toolbox\simulink\slhistory;C:\Program
+Files\MATLAB\R2018b\toolbox\simulink\simulink\slproject\simulink;C:\Program
+Files\MATLAB\R2018b\toolbox\simulink\simulink\slproject;C:\Program
+Files\MATLAB\R2018b\toolbox\simulink\simulink\slproject\menu;C:\Program
+Files\MATLAB\R2018b\toolbox\simulink\simulink\slproject\examples;C:\Program
+Files\MATLAB\R2018b\toolbox\simulink\simulink\slproject\templates;C:\Program
+Files\MATLAB\R2018b\toolbox\slsim\design;C:\Program Files\MATLAB\R2018b\toolbox\simulink\sltemplate;C:\Program
+Files\MATLAB\R2018b\toolbox\simulink\simulink\sltopo;C:\Program Files\MATLAB\R2018b\toolbox\sltp\m;C:\Program
+Files\MATLAB\R2018b\toolbox\simulink\sl_async_streaming;C:\Program
+Files\MATLAB\R2018b\toolbox\simulink\fixedandfloat;C:\Program
+Files\MATLAB\R2018b\toolbox\simulink\fixedandfloat\obsolete;C:\Program
+Files\MATLAB\R2018b\toolbox\simulink\sl_graphics_services\tools;C:\Program
+Files\MATLAB\R2018b\toolbox\simulink\simulink\iodata\iomap;C:\Program
+Files\MATLAB\R2018b\toolbox\simulink\sta\sourceBlocks;C:\Program
+Files\MATLAB\R2018b\toolbox\simulink\simulink\iodata\ioformat;C:\Program
+Files\MATLAB\R2018b\toolbox\shared\sl_messages;C:\Program
+Files\MATLAB\R2018b\toolbox\simulink\simulink\performance;C:\Program
+Files\MATLAB\R2018b\toolbox\simulink\simulink\performance\performancea;C:\Program
+Files\MATLAB\R2018b\toolbox\sl_pir_cap;C:\Program Files\MATLAB\R2018b\toolbox\shared\slpir;C:\Program
+Files\MATLAB\R2018b\toolbox\shared\dastudio\seqdiagram;C:\Program Files\MATLAB\R2018b\toolbox\shared\diagnostic;C:\Program
+Files\MATLAB\R2018b\toolbox\simulink\sta\scenarioconnector;C:\Program
+Files\MATLAB\R2018b\toolbox\simulink\sta\scenarioconnector\ui;C:\Program
+Files\MATLAB\R2018b\toolbox\simulink\sta\scenarioconnector\ui\toolstrip\modelsection;C:\Program
+Files\MATLAB\R2018b\toolbox\simulink\sta\scenarioconnector\ui\toolstrip\filesection;C:\Program
+Files\MATLAB\R2018b\toolbox\simulink\sta\editor;C:\Program Files\MATLAB\R2018b\toolbox\simulink\sta\editor\ui;C:\Program
+Files\MATLAB\R2018b\toolbox\simulink\sta\ui;C:\Program Files\MATLAB\R2018b\toolbox\simulink\sta\ui\comparisontool;C:\Program
+Files\MATLAB\R2018b\toolbox\simulink\sta\ui\mapping;C:\Program
+Files\MATLAB\R2018b\toolbox\simulink\sta\ui\mapping\callbacks;C:\Program
+Files\MATLAB\R2018b\toolbox\simulink\sta\ui\mapping\util;C:\Program
+Files\MATLAB\R2018b\toolbox\simulink\sta\ui\toolstrip;C:\Program
+Files\MATLAB\R2018b\toolbox\simulink\sta\ui\toolstrip\open\streaming;C:\Program
+Files\MATLAB\R2018b\toolbox\simulink\sta\ui\toolstrip\help;C:\Program
+Files\MATLAB\R2018b\toolbox\simulink\sta\ui\toolstrip\open;C:\Program
+Files\MATLAB\R2018b\toolbox\simulink\sta\ui\toolstrip\session;C:\Program
+Files\MATLAB\R2018b\toolbox\simulink\sta\ui\toolstrip\report;C:\Program
+Files\MATLAB\R2018b\toolbox\simulink\sta\ui\preferences\mapper;C:\Program
+Files\MATLAB\R2018b\toolbox\simulink\sta\derivedSignals;C:\Program
+Files\MATLAB\R2018b\toolbox\simulink\sta\sl_sta_editor_block;C:\Program
+Files\MATLAB\R2018b\toolbox\simulink\sta\repository;C:\Program
+Files\MATLAB\R2018b\toolbox\simulink\sta\repository\util;C:\Program
+Files\MATLAB\R2018b\toolbox\simulink\ui\sl_studio\sl_studio;C:\Program
+Files\MATLAB\R2018b\toolbox\shared\sl_units_mldatx;C:\Program
+Files\MATLAB\R2018b\toolbox\simulink\simulink\upgradeadvisor;C:\Program
+Files\MATLAB\R2018b\toolbox\stats\bayesoptim;C:\Program Files\MATLAB\R2018b\toolbox\stats\bigdata;C:\Program
+Files\MATLAB\R2018b\toolbox\stats\classreg;C:\Program Files\MATLAB\R2018b\toolbox\stats\clustering;C:\Program
+Files\MATLAB\R2018b\toolbox\stats\featlearn;C:\Program Files\MATLAB\R2018b\toolbox\stats\stats;C:\Program
+Files\MATLAB\R2018b\toolbox\stats\statsdemos;C:\Program Files\MATLAB\R2018b\toolbox\stats\distributed;C:\Program
+Files\MATLAB\R2018b\toolbox\stats\gpu;C:\Program Files\MATLAB\R2018b\toolbox\stats\mlearnapp;C:\Program
+Files\MATLAB\R2018b\toolbox\matlab\storage\matlabdrive;C:\Program
+Files\MATLAB\R2018b\toolbox\matlab\storage\mldrivedesktop;C:\Program Files\MATLAB\R2018b\toolbox\symbolic\symbolic;C:\Program
+Files\MATLAB\R2018b\toolbox\symbolic\symbolicdemos;C:\Program Files\MATLAB\R2018b\toolbox\matlab\system;C:\Program
+Files\MATLAB\R2018b\toolbox\matlab\system\editor;C:\Program Files\MATLAB\R2018b\toolbox\target\codertarget;C:\Program
+Files\MATLAB\R2018b\toolbox\target\codertarget\rtw;C:\Program
+Files\MATLAB\R2018b\toolbox\target\codertarget\matlabcoder;C:\Program
+Files\MATLAB\R2018b\toolbox\target\codertarget\sltoolstrip\m;C:\Program
+Files\MATLAB\R2018b\toolbox\matlab\timeseries;C:\Program
+Files\MATLAB\R2018b\toolbox\matlab\toolboxmanagement\matlab_api;C:\Program
+Files\MATLAB\R2018b\toolbox\matlab\toolbox_packaging;C:\Program Files\MATLAB\R2018b\toolbox\matlab\toolstrip;C:\Program
+Files\MATLAB\R2018b\toolbox\matlab\uicomponents\uicomponents\plugin\appdesigner;C:\Program
+Files\MATLAB\R2018b\toolbox\matlab\uicomponents\uicomponents;C:\Program
+Files\MATLAB\R2018b\toolbox\matlab\uicomponents\uicomponents\graphics;C:\Program
+Files\MATLAB\R2018b\toolbox\shared\spcuilib\unifiedscopes;C:\Program Files\MATLAB\R2018b\toolbox\matlab\webcam;C:\Program
+Files\MATLAB\R2018b\toolbox\shared\spcuilib\webscopes;C:\Program
+Files\MATLAB\R2018b\toolbox\matlab\external\interfaces\webservices\http;C:\Program
+Files\MATLAB\R2018b\toolbox\matlab\external\interfaces\json;C:\Program
+Files\MATLAB\R2018b\toolbox\matlab\external\interfaces\webservices\restful;C:\Program
+Files\MATLAB\R2018b\toolbox\matlab\external\interfaces\webservices;C:\Program
+Files\MATLAB\R2018b\toolbox\matlab\external\interfaces\webservices\wsdlPHANMAN_130416_1_29_37_m32_t60_OTseg__mod.nii".
+
+Error in <a href="matlab:matlab.internal.language.introspective.errorDocCallback('load_nii', 'D:\Documents\MATLAB\NIfTI_20140122\load_nii.m', 172)" style="font-weight:bold">load_nii</a> (<a href="matlab: opentoline('D:\Documents\MATLAB\NIfTI_20140122\load_nii.m',172,0)">line 172</a>)
+   [nii.hdr,nii.filetype,nii.fileprefix,nii.machine] = load_nii_hdr(filename);
+} 
+path_o
+
+path_o =
+
+    '../data/lesions/homogeneous/'
+
+path_o = '../data/lesions/homogeneous/';
+path_e = '../data/lesions/heterogeneous/';
+files = dir(fullfile([path_o '*.nii']));
+features = zeros(size(files, 1), 5);
+for n = 1:size(files,1)
+    pathtemp = [path_o files(n).name];
+    nii = load_nii(pathtemp);
+    img = double(nii.img);
+    % Header
+    hdr = img.hdr;
+
+    % "Fix" the visualization based on the output/color scale
+    minimum = min(min(min(img)));% disp(num2str(minimum));
+    maximum = max(max(max(img)));% disp(num2str(maximum));
+    
+    % Normalize the image between 0 and 1
+    img = img - minimum;
+    img = img / maximum;
+    img = img * 1;
+    
+    % Calculate Metabolic Target Volume (in cc)
+    features(n, 1) = calc_vol(img) 
+end
+{Dot indexing is not supported for variables of this type.
+} 
+main
+{Dot indexing is not supported for variables of this type.
+
+Error in <a href="matlab:matlab.internal.language.introspective.errorDocCallback('main', 'D:\Dropbox\Universita''\V Anno\Medicine\medicalimaging-bigdata\project\main.m', 12)" style="font-weight:bold">main</a> (<a href="matlab: opentoline('D:\Dropbox\Universita''\V Anno\Medicine\medicalimaging-bigdata\project\main.m',12,0)">line 12</a>)
+    hdr = img.hdr;
+} 
+main
+{Dot indexing is not supported for variables of this type.
+
+Error in <a href="matlab:matlab.internal.language.introspective.errorDocCallback('calc_vol', 'D:\Dropbox\Universita''\V Anno\Medicine\medicalimaging-bigdata\project\calc_vol.m', 4)" style="font-weight:bold">calc_vol</a> (<a href="matlab: opentoline('D:\Dropbox\Universita''\V Anno\Medicine\medicalimaging-bigdata\project\calc_vol.m',4,0)">line 4</a>)
+header = img.hdr;
+
+Error in <a href="matlab:matlab.internal.language.introspective.errorDocCallback('main', 'D:\Dropbox\Universita''\V Anno\Medicine\medicalimaging-bigdata\project\main.m', 25)" style="font-weight:bold">main</a> (<a href="matlab: opentoline('D:\Dropbox\Universita''\V Anno\Medicine\medicalimaging-bigdata\project\main.m',25,0)">line 25</a>)
+    features(n, 1) = calc_vol(img);
+} 
+main
+{Dot indexing is not supported for variables of this type.
+
+Error in <a href="matlab:matlab.internal.language.introspective.errorDocCallback('calc_vol', 'D:\Dropbox\Universita''\V Anno\Medicine\medicalimaging-bigdata\project\calc_vol.m', 4)" style="font-weight:bold">calc_vol</a> (<a href="matlab: opentoline('D:\Dropbox\Universita''\V Anno\Medicine\medicalimaging-bigdata\project\calc_vol.m',4,0)">line 4</a>)
+header = img.hdr;
+
+Error in <a href="matlab:matlab.internal.language.introspective.errorDocCallback('main', 'D:\Dropbox\Universita''\V Anno\Medicine\medicalimaging-bigdata\project\main.m', 25)" style="font-weight:bold">main</a> (<a href="matlab: opentoline('D:\Dropbox\Universita''\V Anno\Medicine\medicalimaging-bigdata\project\main.m',25,0)">line 25</a>)
+    features(n, 1) = calc_vol(img);
+} 
+main
+{Dot indexing is not supported for variables of this type.
+
+Error in <a href="matlab:matlab.internal.language.introspective.errorDocCallback('calc_vol', 'D:\Dropbox\Universita''\V Anno\Medicine\medicalimaging-bigdata\project\calc_vol.m', 4)" style="font-weight:bold">calc_vol</a> (<a href="matlab: opentoline('D:\Dropbox\Universita''\V Anno\Medicine\medicalimaging-bigdata\project\calc_vol.m',4,0)">line 4</a>)
+header = img.hdr;
+
+Error in <a href="matlab:matlab.internal.language.introspective.errorDocCallback('main', 'D:\Dropbox\Universita''\V Anno\Medicine\medicalimaging-bigdata\project\main.m', 25)" style="font-weight:bold">main</a> (<a href="matlab: opentoline('D:\Dropbox\Universita''\V Anno\Medicine\medicalimaging-bigdata\project\main.m',25,0)">line 25</a>)
+    features(n, 1) = calc_vol(img);
+} 
+main
+
+npix =
+
+   434
+
+
+npix =
+
+   223
+
+
+npix =
+
+   316
+
+
+npix =
+
+   238
+
+
+npix =
+
+   557
+
+
+npix =
+
+   328
+
+
+npix =
+
+   475
+
+
+npix =
+
+   414
+
+
+npix =
+
+    83
+
+
+npix =
+
+   569
+
+
+npix =
+
+   340
+
+
+npix =
+
+   484
+
+
+npix =
+
+   420
+
+
+npix =
+
+   208
+
+
+npix =
+
+   486
+
+
+npix =
+
+   353
+
+
+npix =
+
+   260
+
+
+npix =
+
+   555
+
+
+npix =
+
+   345
+
+
+npix =
+
+   258
+
+
+npix =
+
+   509
+
+
+npix =
+
+   511
+
+
+npix =
+
+   344
+
+
+npix =
+
+   275
+
+
+npix =
+
+   336
+
+
+npix =
+
+   260
+

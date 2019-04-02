@@ -1,27 +1,25 @@
-function features = firstorder__features(tumour__volume)
-    
-    % THIS FUNCTION IS INCOMPLETE (see the code below)
+function features = firstorder__features(img, hdr)
     
     %
     % INPUT
-    % tumour__volume is the segmented 3D volume of the lesion (x-by-y-by-z
-    % matrix)
+    % nii_file is the nii image file of segmented 3D volume of the lesion
     %
     % OUTPUT
-    % features is a matlab structure containing all the histogram-based
-    % features extracted in the code
+    % features is a matlab structure containing all the structural
+    % features of the lesion extracted in the code
     %
     
     features = [];
     
-    % Tip: some preprocessing needed here
+    % Some preprocessing needed here
     % >>>
+    x = size(img, 1);
+    y = size(img, 2);
+    z = size(img, 3);
     % Linearize image to a row vector of intensities
-    volume_lin = reshape(tumour__volume, [1, size(tumour__volume, 1) ...
-        * size(tumour__volume, 2) * size(tumour__volume, 3)]);
+    img__lin = reshape(img, [1,  x * y * z]);
     % Exclude null intensities
-    tumour__lin_nz = nonzeros(volume_lin);
-    tumour__volume = tumour__lin_nz;
+    tumour__volume = nonzeros(img__lin);
     
     [count, ~] = hist(tumour__volume, 256); % The second argument represent the number of bins
     tot = sum(count);
@@ -63,9 +61,9 @@ function features = firstorder__features(tumour__volume)
     
     % Entropy
     entropy__vector = frequency.*log2(frequency);
-    for i=1:256
-        if isnan(entropy__vector(1, i))
-            entropy__vector(1, i) = 0;
+    for k=1:256
+        if isnan(entropy__vector(1, k))
+            entropy__vector(1, k) = 0;
         end
     end
     entropy = (-1) * sum(entropy__vector);

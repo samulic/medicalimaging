@@ -16,7 +16,11 @@ function features = firstorder__features(tumour__volume)
     
     % Tip: some preprocessing needed here
     % >>>
-
+    tumour__lin = reshape(tumour__volume, [1, size(tumour__volume, 1) ...
+        * size(tumour__volume, 2) * size(tumour__volume, 3)]);
+    tumour__lin_nz = nonzeros(tumour__lin);
+    
+    tumour__volume = tumour__lin_nz
     
     [count, ~] = hist(tumour__volume, 256); % The second argument represent the number of bins
     tot = sum(count);
@@ -30,13 +34,16 @@ function features = firstorder__features(tumour__volume)
     features.max = tumour__max;
     
     % Minimum
-    % >> INSERT CODE HERE
+    tumour__min  = min(tumour__volume);
+    features.min = tumour__min;
     
     % Mean
-    % >> INSERT CODE HERE
+    tumour__mean  = mean(tumour__volume);
+    features.mean = tumour__mean;
     
     % Median
-    % >> INSERT CODE HERE
+    tumour__median  = median(tumour__volume);
+    features.median = tumour__median;
 
     % Mean Absolute Deviation (MAD)
     m__dev = abs(tumour__volume - tumour__mean);
@@ -44,10 +51,12 @@ function features = firstorder__features(tumour__volume)
     features.mad = MAD;
     
     % Root Mean Square (RMS)
-    % >> INSERT CODE HERE
+    tumour__rms = rms(tumour__volume);
+    features.rms = tumour__rms;
 
     % Energy
     % >> INSERT CODE HERE
+    features.energy = -999;
     
     % Entropy
     entropy__vector = frequency.*log2(frequency);
@@ -76,7 +85,8 @@ function features = firstorder__features(tumour__volume)
     clear temp__vector
     
     % Standard Deviation 
-    % >> INSERT CODE HERE
+    tumour__sd = std(tumour__volume);
+    features.sd = tumour__sd;
 
     % Uniformity
     uniformity__vector = frequency.*frequency;

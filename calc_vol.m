@@ -1,6 +1,5 @@
 function [outputArg1] = calc_vol(img, hdr)
-%UNTITLED2 Summary of this function goes here
-%   Detailed explanation goes here
+%CALC_VOL
 header = hdr;
 x = header.dime.pixdim(2) / 10;
 y = header.dime.pixdim(3) / 10;

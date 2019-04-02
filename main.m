@@ -1,5 +1,5 @@
-path_o = '../data/lesions/homogeneous/';
-path_e = '../data/lesions/heterogeneous/';
+path_o = 'lesions/homogeneous/';
+path_e = 'lesions/heterogeneous/';
 
 files_o = dir(fullfile([path_o '*.nii']));
 files_e = dir(fullfile([path_e '*.nii']));
@@ -78,7 +78,7 @@ for n = 1:size(files_e,1)
     features_e(n).surfToVolRatio = features_e(n).surf / features_e(n).mtv;
     
     %% First order features
-    features_fo_e(n) = firstorder__features(img);
+    features_e(n).fo = firstorder__features(img);
     
     %% Texture features
     % Prepare input volume for co-occurrence matrix

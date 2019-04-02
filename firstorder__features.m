@@ -16,11 +16,12 @@ function features = firstorder__features(tumour__volume)
     
     % Tip: some preprocessing needed here
     % >>>
-    tumour__lin = reshape(tumour__volume, [1, size(tumour__volume, 1) ...
+    % Linearize image to a row vector of intensities
+    volume_lin = reshape(tumour__volume, [1, size(tumour__volume, 1) ...
         * size(tumour__volume, 2) * size(tumour__volume, 3)]);
-    tumour__lin_nz = nonzeros(tumour__lin);
-    
-    tumour__volume = tumour__lin_nz
+    % Exclude null intensities
+    tumour__lin_nz = nonzeros(volume_lin);
+    tumour__volume = tumour__lin_nz;
     
     [count, ~] = hist(tumour__volume, 256); % The second argument represent the number of bins
     tot = sum(count);
@@ -53,10 +54,12 @@ function features = firstorder__features(tumour__volume)
     % Root Mean Square (RMS)
     tumour__rms = rms(tumour__volume);
     features.rms = tumour__rms;
-
+    
+    % TODO
     % Energy
     % >> INSERT CODE HERE
     features.energy = -999;
+
     
     % Entropy
     entropy__vector = frequency.*log2(frequency);

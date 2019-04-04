@@ -26,7 +26,7 @@ function features = firstorder__features(img, hdr)
     frequency = count/tot;
 
     tumour__dimension = size(tumour__volume);
-    %squared__matrix = tumour__volume.^2;
+    squared__matrix = tumour__volume.^2;
     
     % Maximum
     tumour__max = max(tumour__volume);
@@ -53,10 +53,9 @@ function features = firstorder__features(img, hdr)
     tumour__rms = rms(tumour__volume);
     features.rms = tumour__rms;
     
-    % TODO
     % Energy
-    % >> INSERT CODE HERE
-    features.energy = -999;
+    tumour__energy = sum(sum(squared__matrix));
+    features.energy = tumour__energy;
 
     
     % Entropy

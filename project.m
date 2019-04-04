@@ -54,11 +54,11 @@ for i = 1:size(df, 2)
     pixelW = header.dime.pixdim(2);
     sliceS = header.dime.pixdim(4); % slice spacing z-dim
     textType = 'Matrix';
-    quantAlgo = 'Equal'; % 'Uniform' ?
-    Ng = 8; % number of gray levels
+    %quantAlgo = 'Uniform'; % 'Equal';
+    Ng = 64; % number of gray levels
 
     [ROIonly,levels] = prepareVolume(img, mask, 'PETscan', pixelW, sliceS,...
-        1, 5, textType, quantAlgo, Ng);
+        1, sliceS, textType, 'Uniform', Ng);
 
     glmc = getGLCM(ROIonly, levels);
 
@@ -90,10 +90,16 @@ for i = 1:size(df, 2)
 end
 
 X_df = rmfield(df, {'id', 'type'});
-%% TODO
-X = cell2mat(struct2cell(X_df));
+%X = cell2mat(struct2cell(X_df));
+X = struct2table(X_df, 'AsArray', true);
 
-fit_svm = fitcsvm(X, Y)
-cv_svm  = crossval(fit_svm)
+fit_svm = fitcsvm(X, Y);
+cv_svm  = crossval(fit_svm);
 
 kfoldLoss(cv_svm)
+
+
+B = TreeBagger(100, X, Y);
+
+view(B.Trees{1, 2})
+view(B)

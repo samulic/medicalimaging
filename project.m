@@ -98,8 +98,15 @@ cv_svm  = crossval(fit_svm);
 
 kfoldLoss(cv_svm)
 
+<<<<<<< HEAD
+% Export to CSV
+dataset = struct2table(df, 'AsArray', true);
+%csvwrite('target.csv', Y')
+writetable(dataset, 'dataset.csv')
+=======
 
 B = TreeBagger(100, X, Y);
 
 view(B.Trees{1, 2})
 view(B)
+>>>>>>> 3d91330caf9d52efdec66e70b7ddb21bb2f08785

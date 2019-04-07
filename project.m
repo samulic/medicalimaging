@@ -77,7 +77,6 @@ end
 
 
 %% CLASSIFICATION
-% SVM
 % Create target binary variable
 % Zero if lesion is homogeneous, one if heterogeneous
 Y = [];
@@ -93,10 +92,140 @@ X_df = rmfield(df, {'id', 'type'});
 %X = cell2mat(struct2cell(X_df));
 X = struct2table(X_df, 'AsArray', true);
 
+%% SVM senza feature selection
 fit_svm = fitcsvm(X, Y);
 cv_svm  = crossval(fit_svm);
 
 kfoldLoss(cv_svm)
+
+%% PENALIZED LOGISTIC REGRESSION
+X2mtrx = X{:,:}; %lassoglm requires a matrix for X, not a table
+Yvec = Y(:); %lassoglm requires a vector for Y
+
+
+%train e test
+c = cvpartition(Yvec,'HoldOut',0.3);
+idxTrain = training(c,1); 
+idxTest = ~idxTrain;
+XTrain = X2mtrx(idxTrain,:);
+yTrain = Yvec(idxTrain);
+XTest = X2mtrx(idxTest,:);
+yTest = Yvec(idxTest);
+
+%%%%%%%%%
+% LASSO
+%%%%%%%%%
+[B,FitInfo] = lassoglm(XTrain,yTrain,'binomial','NumLambda',25,'CV',10);
+
+%plot lambda
+lassoPlot(B,FitInfo,'PlotType','CV'); %(REVERSE X-AXIS)
+legend('show','Location','best')
+
+%plot coefficients
+lassoPlot(B,FitInfo,'PlotType','Lambda','XScale','log'); %(REVERSE X-AXIS)
+
+indx = FitInfo.Index1SE; %coefficients of lambda1se
+B0 = B(:,indx)
+nonzeros = sum(B0 ~= 0)%3 selected
+
+intercept = FitInfo.Intercept(indx);
+coef = [intercept; B0]
+
+%test evaluation
+yhat = glmval(coef,XTest,'logit');
+yhatBool = (yhat>=0.5); %questo trasforma in 0 o 1, la colonna di quell che c'è sopra
+
+yTestBool = (yTest==1);
+c = confusionchart(yTestBool,yhatBool);
+
+%%%%%%%%%%
+%ELASTIC NET
+%%%%%%%%%%
+ 
+%elastic net con ALPHA=0.5
+[B,FitInfo] = lassoglm(XTrain,yTrain,'binomial','NumLambda',25,'CV',10, 'Alpha',0.5);
+
+%plot lambda
+lassoPlot(B,FitInfo,'PlotType','CV'); %(REVERSE X-AXIS)
+legend('show','Location','best')
+
+%plot coefficients
+lassoPlot(B,FitInfo,'PlotType','Lambda','XScale','log'); %(REVERSE X-AXIS)
+
+indx = FitInfo.Index1SE; %coefficients of lambda1se
+B0 = B(:,indx)
+nonzeros = sum(B0 ~= 0)%14 selected
+
+intercept = FitInfo.Intercept(indx);
+coef = [intercept; B0]
+
+%test evaluation
+yhat = glmval(coef,XTest,'logit');
+yhatBool = (yhat>=0.5); %questo trasforma in 0 o 1, la colonna di quell che c'è sopra
+
+yTestBool = (yTest==1);
+c = confusionchart(yTestBool,yhatBool);
+
+%%%%%%%%%%%%%%%%%%
+%elastic net con ALPHA=0.2
+[B,FitInfo] = lassoglm(XTrain,yTrain,'binomial','NumLambda',25,'CV',10, 'Alpha',0.2);
+
+%plot lambda
+lassoPlot(B,FitInfo,'PlotType','CV'); %(REVERSE X-AXIS)
+legend('show','Location','best')
+
+%plot coefficients
+lassoPlot(B,FitInfo,'PlotType','Lambda','XScale','log'); %(REVERSE X-AXIS)
+
+indx = FitInfo.Index1SE; %coefficients of lambda1se
+B0 = B(:,indx)
+nonzeros = sum(B0 ~= 0)%18 selected
+
+intercept = FitInfo.Intercept(indx);
+coef = [intercept; B0]
+
+%test evaluation
+yhat = glmval(coef,XTest,'logit');
+yhatBool = (yhat>=0.5); %questo trasforma in 0 o 1, la colonna di quell che c'è sopra
+
+yTestBool = (yTest==1);
+c = confusionchart(yTestBool,yhatBool);
+
+%%%%%%%%%%%%%%%%%%
+%elastic net con ALPHA=0.8
+[B,FitInfo] = lassoglm(XTrain,yTrain,'binomial','NumLambda',25,'CV',10, 'Alpha',0.8);
+
+%plot lambda
+lassoPlot(B,FitInfo,'PlotType','CV'); %(REVERSE X-AXIS)
+legend('show','Location','best')
+
+%plot coefficients
+lassoPlot(B,FitInfo,'PlotType','Lambda','XScale','log'); %(REVERSE X-AXIS)
+
+indx = FitInfo.Index1SE; %coefficients of lambda1se
+B0 = B(:,indx)
+nonzeros = sum(B0 ~= 0)%7 selected
+
+intercept = FitInfo.Intercept(indx);
+coef = [intercept; B0]
+
+%test evaluation
+yhat = glmval(coef,XTest,'logit');
+yhatBool = (yhat>=0.5); %questo trasforma in 0 o 1, la colonna di quell che c'è sopra
+
+yTestBool = (yTest==1);
+c = confusionchart(yTestBool,yhatBool);
+c2 = confusionmat(yTestBool, yhatBool);
+
+%RECALL
+for i =1:size(c2,1)
+    recall(i)=c2(i,i)/sum(c2(i,:));
+end
+ 
+
+%% OSS
+% sopra alpha=0.5 non cambia più la matrice di confusione, quindi aumentare
+% il fattore di penalizzazione alpha non cambia il risultato.
 
 <<<<<<< HEAD
 % Export to CSV

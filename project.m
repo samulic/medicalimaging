@@ -1,4 +1,7 @@
 % Requires load_nii function from third party 
+clear; clc; close all;
+addpath(genpath('thirdparty-libraries'));
+
 path = 'lesions/';
 
 files_o = dir(fullfile([path 'homogeneous/*.nii']));
@@ -12,7 +15,7 @@ type = [repmat('omogen', size(files_o, 1), 1); repmat('eterog', size(files_e, 1)
 temp = num2cell(type);
 [df.type] = temp{:};
 
-%% Create features for each nifti image of both type of lesion
+%% Create features for each nifti image
 % features are appended to the dataframe
 for i = 1:size(df, 2)
     temp_path = [files(i).folder '\' files(i).name];
@@ -30,6 +33,7 @@ for i = 1:size(df, 2)
     img = img / maximum;
     img = img * 1;
     
+    nii_image.img = img;
     % ### Structural features ### 
     % Calculate Metabolic Target Volume (in cc)
     df(i).vol = calc_vol(img, header);

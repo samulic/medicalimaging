@@ -119,6 +119,8 @@ yTest = Yvec(idxTest);
 %%%%%%%%%
 % LASSO
 %%%%%%%%%
+rng('default')%seed
+tallrng('default')
 [B,FitInfo] = lassoglm(XTrain,yTrain,'binomial','NumLambda',25,'CV',10);
 
 %plot lambda
@@ -220,11 +222,15 @@ yhatBool = (yhat>=0.5); %questo trasforma in 0 o 1, la colonna di quell che c'ï¿
 yTestBool = (yTest==1);
 c = confusionchart(yTestBool,yhatBool);
 c2 = confusionmat(yTestBool, yhatBool);
+c3 = confusionchart(c2);
 
 %RECALL
 for i =1:size(c2,1)
     recall(i)=c2(i,i)/sum(c2(i,:));
+    T = c2(i,i);
+    T = c2(i,i);
 end
+Recall=sum(recall)/size(c2,1);
  
 
 %% OSS

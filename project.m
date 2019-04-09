@@ -142,7 +142,26 @@ yhat = glmval(coef,XTest,'logit');
 yhatBool = (yhat>=0.5); %questo trasforma in 0 o 1, la colonna di quell che c'ï¿½ sopra
 
 yTestBool = (yTest==1);
-c = confusionchart(yTestBool,yhatBool);
+%c = confusionchart(yTestBool,yhatBool);
+c2 = confusionmat(yTestBool, yhatBool);%0 = homogeneous; 1 = heterogeneous
+labels = ["homogeneous"; "heterogeneous"];
+c3 = confusionchart(c2, labels);
+
+% la matrice c2 è mette nella prima riga e nella prima colonna lo 0
+% (omogeneo) e quindi i falsi. Ovvero ha una struttura del tipo
+%  0 1
+%0 # # 
+%1 # #
+%
+%il confusionchart invece ordina in base all'ordine alfavetico delle
+%labels, quindi metterà prima 1, ovvero heterogeneous.
+%Tutte le metriche vengono calcolate tramite la matrice c2, ricordarsene la
+%struttura!!!
+
+acc_lasso=(c2(1,1)+c2(2,2))/sum(sum(c2));
+missclass_lasso=1-acc_lasso;%missclassification rate
+specificity_lasso = c2(1,1)/sum(c2(1,:)); %TN rate (homogeneous)
+sensitivity_lasso = c2(2,2)/sum(c2(2,:)); %TP rate (heterogeneoous)
 
 %%%%%%%%%%
 %ELASTIC NET
@@ -170,7 +189,15 @@ yhat = glmval(coef,XTest,'logit');
 yhatBool = (yhat>=0.5); %questo trasforma in 0 o 1, la colonna di quell che c'ï¿½ sopra
 
 yTestBool = (yTest==1);
-c = confusionchart(yTestBool,yhatBool);
+%c = confusionchart(yTestBool,yhatBool);
+c2 = confusionmat(yTestBool, yhatBool);%0 = homogeneous; 1 = heterogeneous
+labels = ["homogeneous"; "heterogeneous"];
+c3 = confusionchart(c2, labels);
+
+acc_enet05=(c2(1,1)+c2(2,2))/sum(sum(c2));
+missclass_enet05=1-acc_enet05;%missclassification rate
+specificity_enet05 = c2(1,1)/sum(c2(1,:)); %TN rate (homogeneous)
+sensitivity_enet05 = c2(2,2)/sum(c2(2,:)); %TP rate (heterogeneoous)
 
 %%%%%%%%%%%%%%%%%%
 %elastic net con ALPHA=0.2
@@ -195,11 +222,24 @@ yhat = glmval(coef,XTest,'logit');
 yhatBool = (yhat>=0.5); %questo trasforma in 0 o 1, la colonna di quell che c'ï¿½ sopra
 
 yTestBool = (yTest==1);
-c = confusionchart(yTestBool,yhatBool);
+%c = confusionchart(yTestBool,yhatBool);
+c2 = confusionmat(yTestBool, yhatBool);%0 = homogeneous; 1 = heterogeneous
+labels = ["homogeneous"; "heterogeneous"];
+c3 = confusionchart(c2, labels);
+
+acc_enet02=(c2(1,1)+c2(2,2))/sum(sum(c2));
+missclass_enet02=1-acc_enet02;%missclassification rate
+specificity_enet02 = c2(1,1)/sum(c2(1,:)); %TN rate (homogeneous)
+sensitivity_enet02 = c2(2,2)/sum(c2(2,:)); %TP rate (heterogeneoous)
 
 %%%%%%%%%%%%%%%%%%
 %elastic net con ALPHA=0.8
 [B,FitInfo] = lassoglm(XTrain,yTrain,'binomial','NumLambda',25,'CV',10, 'Alpha',0.8);
+
+acc_enet08=(c2(1,1)+c2(2,2))/sum(sum(c2));
+missclass_enet08=1-acc_enet08;%missclassification rate
+specificity_enet08 = c2(1,1)/sum(c2(1,:)); %TN rate (homogeneous)
+sensitivity_enet08 = c2(2,2)/sum(c2(2,:)); %TP rate (heterogeneoous)
 
 %plot lambda
 lassoPlot(B,FitInfo,'PlotType','CV'); %(REVERSE X-AXIS)
@@ -222,15 +262,8 @@ yhatBool = (yhat>=0.5); %questo trasforma in 0 o 1, la colonna di quell che c'ï¿
 yTestBool = (yTest==1);
 c = confusionchart(yTestBool,yhatBool);
 c2 = confusionmat(yTestBool, yhatBool);
-c3 = confusionchart(c2);
-
-%RECALL
-for i =1:size(c2,1)
-    recall(i)=c2(i,i)/sum(c2(i,:));
-    T = c2(i,i);
-    T = c2(i,i);
-end
-Recall=sum(recall)/size(c2,1);
+labels = ["homogeneous"; "heterogeneous"];
+c3 = confusionchart(c2, labels);
  
 
 %% OSS

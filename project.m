@@ -132,7 +132,8 @@ lassoPlot(B,FitInfo,'PlotType','Lambda','XScale','log'); %(REVERSE X-AXIS)
 
 indx = FitInfo.Index1SE; %coefficients of lambda1se
 B0 = B(:,indx)
-nonzeros = sum(B0 ~= 0)%3 selected
+nonzeros = sum(B0 ~= 0)%7 selected
+selectedVar_lasso = X(:,find(B0)).Properties.VariableNames %selected variables
 
 intercept = FitInfo.Intercept(indx);
 coef = [intercept; B0]
@@ -180,6 +181,7 @@ lassoPlot(B,FitInfo,'PlotType','Lambda','XScale','log'); %(REVERSE X-AXIS)
 indx = FitInfo.Index1SE; %coefficients of lambda1se
 B0 = B(:,indx)
 nonzeros = sum(B0 ~= 0)%14 selected
+selectedVar_enet05 = X(:,find(B0)).Properties.VariableNames %selected variables
 
 intercept = FitInfo.Intercept(indx);
 coef = [intercept; B0]
@@ -213,6 +215,8 @@ lassoPlot(B,FitInfo,'PlotType','Lambda','XScale','log'); %(REVERSE X-AXIS)
 indx = FitInfo.Index1SE; %coefficients of lambda1se
 B0 = B(:,indx)
 nonzeros = sum(B0 ~= 0)%18 selected
+selectedVar_enet02 = X(:,find(B0)).Properties.VariableNames  %selected variables
+
 
 intercept = FitInfo.Intercept(indx);
 coef = [intercept; B0]
@@ -236,11 +240,6 @@ sensitivity_enet02 = c2(2,2)/sum(c2(2,:)); %TP rate (heterogeneoous)
 %elastic net con ALPHA=0.8
 [B,FitInfo] = lassoglm(XTrain,yTrain,'binomial','NumLambda',25,'CV',10, 'Alpha',0.8);
 
-acc_enet08=(c2(1,1)+c2(2,2))/sum(sum(c2));
-missclass_enet08=1-acc_enet08;%missclassification rate
-specificity_enet08 = c2(1,1)/sum(c2(1,:)); %TN rate (homogeneous)
-sensitivity_enet08 = c2(2,2)/sum(c2(2,:)); %TP rate (heterogeneoous)
-
 %plot lambda
 lassoPlot(B,FitInfo,'PlotType','CV'); %(REVERSE X-AXIS)
 legend('show','Location','best')
@@ -251,6 +250,7 @@ lassoPlot(B,FitInfo,'PlotType','Lambda','XScale','log'); %(REVERSE X-AXIS)
 indx = FitInfo.Index1SE; %coefficients of lambda1se
 B0 = B(:,indx)
 nonzeros = sum(B0 ~= 0)%7 selected
+selectedVar_enet08 = X(:,find(B0)).Properties.VariableNames %selected variables
 
 intercept = FitInfo.Intercept(indx);
 coef = [intercept; B0]
@@ -265,12 +265,20 @@ c2 = confusionmat(yTestBool, yhatBool);
 labels = ["homogeneous"; "heterogeneous"];
 c3 = confusionchart(c2, labels);
  
+acc_enet08=(c2(1,1)+c2(2,2))/sum(sum(c2));
+missclass_enet08=1-acc_enet08;%missclassification rate
+specificity_enet08 = c2(1,1)/sum(c2(1,:)); %TN rate (homogeneous)
+sensitivity_enet08 = c2(2,2)/sum(c2(2,:)); %TP rate (heterogeneoous)
 
 %% OSS
 % sopra alpha=0.5 non cambia pi� la matrice di confusione, quindi aumentare
 % il fattore di penalizzazione alpha non cambia il risultato.
 
-% Export to CSV
+%% PCA + SVM
+
+
+
+%% Export to CSV
 dataset = struct2table(df, 'AsArray', true);
 %csvwrite('target.csv', Y')
 writetable(dataset, 'dataset.csv')

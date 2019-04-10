@@ -96,12 +96,6 @@ X_df = rmfield(df, {'id', 'type'});
 %X = cell2mat(struct2cell(X_df));
 X = struct2table(X_df, 'AsArray', true);
 
-%% SVM senza feature selection
-fit_svm = fitcsvm(X, Y);
-cv_svm  = crossval(fit_svm);
-
-kfoldLoss(cv_svm)
-
 %% PENALIZED LOGISTIC REGRESSION
 X2mtrx = X{:,:}; %lassoglm requires a matrix for X, not a table
 Yvec = Y(:); %lassoglm requires a vector for Y
@@ -290,7 +284,7 @@ for i=1:size(explained,1)
         break
     end
 end
-XpcaTrain = XpcaTrain(:,1:ncomp)
+XpcaTrain = XpcaTrain(:,1 :ncomp)
 
 
 

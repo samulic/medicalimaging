@@ -1,4 +1,4 @@
-function [fit, coef, accuracy] = elasticnet(XTrain, YTrain, XTest, YTest, alpha)
+function [fit, coef, cm] = elasticnet(XTrain, YTrain, XTest, YTest, alpha)
 %ELASTICNET
 %
 % INPUT
@@ -27,13 +27,13 @@ coef = [intercept; coef];
 %test evaluation
 yhat = glmval(coef, XTest, 'logit');
 % trasforma in 0 o 1 la probabilita' prevista (yhat)
-yhatBool = (yhat >= 0.5);
+yhatBool = (yhat >= 0.4);
 yTestBool = (YTest == 1); % cambia in tipo booleano
 %0 = homogeneous; 1 = heterogeneous
 cm = confusionmat(yTestBool, yhatBool);
 %labels = ["homogeneous"; "heterogeneous"];
 %c3 = confusionchart(c2, labels);
-accuracy = (cm(1,1) + cm(2,2)) / sum(sum(cm));
+%accuracy = (cm(1,1) + cm(2,2)) / sum(sum(cm));
 
 end
 

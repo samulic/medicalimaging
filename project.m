@@ -309,6 +309,8 @@ XpcaTest = XpcaTest(:,1:ncomp);
 
 sum(svmyhat == yTest) / size(yTest,1) %accuracy
 confusionmat(yTest, svmyhat)
+%% SAVE WORKSPACE
+save('workspace')
 %% Export to CSV
 dataset = struct2table(df, 'AsArray', true);
 %csvwrite('target.csv', Y')

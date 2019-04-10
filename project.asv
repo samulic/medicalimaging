@@ -108,8 +108,8 @@ Yvec = Y(:); %lassoglm requires a vector for Y
 
 
 %train e test
-c = cvpartition(Yvec,'HoldOut',0.3);
-idxTrain = training(c,1); 
+cc = cvpartition(Yvec,'HoldOut',0.3);
+idxTrain = training(cc,1); 
 idxTest = ~idxTrain;
 XTrain = X2mtrx(idxTrain,:);
 yTrain = Yvec(idxTrain);
@@ -133,7 +133,7 @@ lassoPlot(B,FitInfo,'PlotType','Lambda','XScale','log'); %(REVERSE X-AXIS)
 indx = FitInfo.Index1SE; %coefficients of lambda1se
 B0 = B(:,indx)
 nonzeros = sum(B0 ~= 0)%7 selected
-selectedVar_lasso = X(:,find(B0)).Properties.VariableNames
+selectedVar_lasso = X(:,find(B0)).Properties.VariableNames %selected variables
 
 intercept = FitInfo.Intercept(indx);
 coef = [intercept; B0]
@@ -181,7 +181,7 @@ lassoPlot(B,FitInfo,'PlotType','Lambda','XScale','log'); %(REVERSE X-AXIS)
 indx = FitInfo.Index1SE; %coefficients of lambda1se
 B0 = B(:,indx)
 nonzeros = sum(B0 ~= 0)%14 selected
-selectedVar_enet05 = X(:,find(B0)).Properties.VariableNames
+selectedVar_enet05 = X(:,find(B0)).Properties.VariableNames %selected variables
 
 intercept = FitInfo.Intercept(indx);
 coef = [intercept; B0]
@@ -215,7 +215,7 @@ lassoPlot(B,FitInfo,'PlotType','Lambda','XScale','log'); %(REVERSE X-AXIS)
 indx = FitInfo.Index1SE; %coefficients of lambda1se
 B0 = B(:,indx)
 nonzeros = sum(B0 ~= 0)%18 selected
-selectedVar_enet02 = X(:,find(B0)).Properties.VariableNames
+selectedVar_enet02 = X(:,find(B0)).Properties.VariableNames  %selected variables
 
 
 intercept = FitInfo.Intercept(indx);
@@ -250,7 +250,7 @@ lassoPlot(B,FitInfo,'PlotType','Lambda','XScale','log'); %(REVERSE X-AXIS)
 indx = FitInfo.Index1SE; %coefficients of lambda1se
 B0 = B(:,indx)
 nonzeros = sum(B0 ~= 0)%7 selected
-selectedVar_enet08 = X(:,find(B0)).Properties.VariableNames
+selectedVar_enet08 = X(:,find(B0)).Properties.VariableNames %selected variables
 
 intercept = FitInfo.Intercept(indx);
 coef = [intercept; B0]
@@ -276,8 +276,39 @@ sensitivity_enet08 = c2(2,2)/sum(c2(2,:)); %TP rate (heterogeneoous)
 
 %% PCA + SVM
 
+%PCA
+[coeff,score,latent,~,explained] = pca(XTrain);
+XpcaTrain = score;
+
+%selection of PC for train e test
+ncomp = 0;
+expldev = 0;
+for i=1:size(explained,1)
+    ncomp = ncomp+1;
+    expldev = expldev + sum(explained(i));
+    if expldev > 95
+        break
+    end
+end
+XpcaTrain = XpcaTrain(:,1:ncomp)
 
 
+
+%classification with SVM
+c = cvpartition(size(XTrain, 1), 'KFold', 10);
+opts = struct('Optimizer','bayesopt','ShowPlots',true,'CVPartition',c,...
+    'AcquisitionFunctionName','expected-improvement-plus'); 
+svmmod = fitcsvm(XpcaTrain, yTrain,'KernelFunction','rbf',...
+    'OptimizeHyperparameters','auto','HyperparameterOptimizationOptions',opts);
+
+[coeff,score,latent,~,explained] = pca(XTest);
+XpcaTest = score;
+XpcaTest = XpcaTest(:,1:ncomp);
+
+[svmyhat,~] = predict(svmmod,XpcaTest);
+
+sum(svmyhat == yTest) / size(yTest,1) %accuracy
+confusionmat(yTest, svmyhat)
 %% Export to CSV
 dataset = struct2table(df, 'AsArray', true);
 %csvwrite('target.csv', Y')

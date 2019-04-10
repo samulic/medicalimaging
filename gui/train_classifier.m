@@ -26,22 +26,24 @@ cc = cvpartition(Y,'HoldOut',0.3);
 idxTrain = training(cc,1); 
 idxTest = ~idxTrain;
 XTrain = X(idxTrain,:);
-XTrain_pca = get_pca_features(XTrain);
 yTrain = Y(idxTrain);
 XTest = X(idxTest,:);
-XTest_pca = get_pca_features(XTest, size(XTrain_pca, 2));
 yTest = Y(idxTest);
 
 % fixed folds for different models using CV 
+rng('default'); % daje de seed ! 
+tallrng('default');
 c = cvpartition(size(XTrain, 1), 'KFold', 10);
 
 if strcmp(classifier, "lasso") || strcmp(classifier, "elasticnet")
     if strcmp(classifier, "lasso")
         alpha = 1;
     end
-    [fit, coef, cm] = elasticnet(XTrain, yTrain, XTest, yTest, alpha);
+    [fit, coef, cm] = elasticnet(XTrain, yTrain, XTest, yTest, c, alpha);
 elseif strcmp(classifier, "svm")
-    % TODO Perform PCA first
+    % Perform PCA first
+    XTrain_pca = get_pca_features(XTrain);
+    XTest_pca = get_pca_features(XTest, size(XTrain_pca, 2));
     % DO SVM
     opts = struct('Optimizer','bayesopt','ShowPlots',false,'CVPartition',c,...
         'AcquisitionFunctionName','expected-improvement-plus'); 

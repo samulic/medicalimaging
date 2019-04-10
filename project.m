@@ -1,6 +1,9 @@
 % Requires load_nii function from third party 
 clear; clc; close all;
 addpath(genpath('thirdparty-libraries'));
+% Se non trova le funzioni.. includere quelle
+% necessarie che sono nella cartella gui
+%addpath(genpath('gui'));
 
 path = 'lesions/';
 
